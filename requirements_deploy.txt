@@ -1,0 +1,6 @@
+# VaultStack ON-PREM DEPLOYMENT requirements (hospital PC: 8GB RAM, CPU, no GPU, offline)
+# Lightweight: NO PyTorch / transformers / unsloth needed at runtime.
+# ASR = faster-whisper (CTranslate2). Extraction = llama.cpp binary (bundled .exe) + GGUF.
+faster-whisper==1.2.1     # pulls ctranslate2, av, onnxruntime, tokenizers, huggingface-hub
+httpx==0.28.1             # talks to the local llama.cpp server
+psutil==7.1.4             # RAM reporting (optional)

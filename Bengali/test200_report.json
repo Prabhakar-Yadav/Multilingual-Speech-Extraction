@@ -1,0 +1,370 @@
+{
+  "exact": 190,
+  "of": 200,
+  "accuracy_pct": 95.0,
+  "errors": {
+    "typos": 0,
+    "missed": 7,
+    "extra": 8,
+    "bad_json": 0
+  },
+  "wrong_cases": [
+    {
+      "i": 59,
+      "bengali": "হ্যালো, এটা কি দাস বাবু? আমি ডাক্তারবাবুর চেম্বার থেকে ফলো-আপের জন্য বলছি। এখনও একটু বমি, আর জয়েন্টে ব্যথা, আর গলা ব্যথা আছে। কিছুদিন আগে আপনি হাঁপানি, মাইগ্রেন এর জন্য ডাক্তার দেখাতে এসেছিলেন। এখন কেমন আছেন? ডাক্তার সেটিরিজিন দিনে দুবার খেতে বলেছেন। ওষুধ চালিয়ে যাবেন। পরের বার আসার আগে থাইরয়েড টেস্ট, আর ইসিজি করিয়ে নেবেন। আচ্ছা, আমরা আপনার জন্য সেলাই করার পরামর্শ দিয়েছি। বাড়ির বাকি সবাই ভালো আছেন? হ্যাঁ। ঠিক আছে, সুস্থ থাকুন, দরকার হলে আবার দেখাতে আসবেন।",
+      "pred": {
+        "medicines": [
+          "Cetirizine"
+        ],
+        "diagnoses": [
+          "pneumonia",
+          "migraine"
+        ],
+        "procedures": [
+          "stitches"
+        ],
+        "tests": [
+          "thyroid test",
+          "ECG"
+        ],
+        "symptoms": [
+          "vomiting",
+          "joint pain",
+          "sore throat"
+        ]
+      },
+      "gold": {
+        "medicines": [
+          "Cetirizine"
+        ],
+        "diagnoses": [
+          "asthma",
+          "migraine"
+        ],
+        "procedures": [
+          "stitches"
+        ],
+        "tests": [
+          "thyroid test",
+          "ECG"
+        ],
+        "symptoms": [
+          "vomiting",
+          "joint pain",
+          "sore throat"
+        ]
+      }
+    },
+    {
+      "i": 69,
+      "bengali": "নমস্কার, আমি কি ঘোষ বাবু এর বাড়িতে কথা বলছি? আমি ক্লিনিক থেকে ফলো-আপের জন্য ফোন করছি। কিছুদিন আগে আপনি ডেঙ্গু, বাত এর জন্য ডাক্তার দেখাতে এসেছিলেন। এখন কেমন আছেন? আচ্ছা, পরের বার আসার আগে আল্ট্রাসাউন্ড, আর সিবিসি করিয়ে নেবেন। আচ্ছা, এখনও একটু খিদে না পাওয়া, আর শ্বাসকষ্ট আছে। আমরা আপনার জন্য ডায়ালিসিস করার পরামর্শ দিয়েছি। বাড়ির বাকি সবাই ভালো আছেন? হ্যাঁ। ঠিক আছে, সুস্থ থাকুন, দরকার হলে আবার দেখাতে আসবেন।",
+      "pred": {
+        "medicines": [],
+        "diagnoses": [
+          "dengue",
+          "arthritis"
+        ],
+        "procedures": [
+          "dialysis",
+          "complete blood count"
+        ],
+        "tests": [
+          "ultrasound",
+          "complete blood count"
+        ],
+        "symptoms": [
+          "loss of appetite",
+          "shortness of breath"
+        ]
+      },
+      "gold": {
+        "medicines": [],
+        "diagnoses": [
+          "dengue",
+          "arthritis"
+        ],
+        "procedures": [
+          "dialysis"
+        ],
+        "tests": [
+          "ultrasound",
+          "complete blood count"
+        ],
+        "symptoms": [
+          "loss of appetite",
+          "shortness of breath"
+        ]
+      }
+    },
+    {
+      "i": 94,
+      "bengali": "নমস্কার, আমি কি রায় বাবু এর বাড়িতে কথা বলছি? আমি ক্লিনিক থেকে ফলো-আপের জন্য ফোন করছি। ঠিক আছে, ডাক্তার অ্যাটোরভাস্ট্যাটিন সকাল-সন্ধ্যা খেতে বলেছেন। ওষুধ চালিয়ে যাবেন। কিছুদিন আগে আপনি ডায়াবেটিস, উচ্চ রক্তচাপ এর জন্য ডাক্তার দেখাতে এসেছিলেন। এখন কেমন আছেন? এখনও একটু বুকে ব্যথা, আর খিদে না পাওয়া, আর পেটে ব্যথা আছে। বাড়ির বাকি সবাই ভালো আছেন? হ্যাঁ। ঠিক আছে, সুস্থ থাকুন, দরকার হলে আবার দেখাতে আসবেন।",
+      "pred": {
+        "medicines": [
+          "Atorvastatin"
+        ],
+        "diagnoses": [
+          "diabetes",
+          "high blood pressure"
+        ],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "stomach pain",
+          "loss of appetite",
+          "chest pain"
+        ]
+      },
+      "gold": {
+        "medicines": [
+          "Atorvastatin"
+        ],
+        "diagnoses": [
+          "diabetes",
+          "high blood pressure"
+        ],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "chest pain",
+          "loss of appetite",
+          "stomach pain"
+        ]
+      }
+    },
+    {
+      "i": 102,
+      "bengali": "নমস্কার, আমি কি নস্কর এর বাড়িতে কথা বলছি? আমি ক্লিনিক থেকে ফলো-আপের জন্য ফোন করছি। পরের বার আসার আগে এমআরআই, আর আল্ট্রাসাউন্ড করিয়ে নেবেন। কিছুদিন আগে আপনি ডাক্তার দেখাতে এসেছিলেন। এখন শরীর কেমন? আমরা আপনার জন্য ইনজেকশন করার পরামর্শ দিয়েছি। এখনও একটু খিদে না পাওয়া, আর পেটে ব্যথা আছে। বাড়ির বাকি সবাই ভালো আছেন? হ্যাঁ। ঠিক আছে, সুস্থ থাকুন, দরকার হলে আবার দেখাতে আসবেন।",
+      "pred": {
+        "medicines": [],
+        "diagnoses": [],
+        "procedures": [],
+        "tests": [
+          "MRI",
+          "ultrasound"
+        ],
+        "symptoms": [
+          "loss of appetite",
+          "stomach pain"
+        ]
+      },
+      "gold": {
+        "medicines": [],
+        "diagnoses": [],
+        "procedures": [
+          "injection"
+        ],
+        "tests": [
+          "MRI",
+          "ultrasound"
+        ],
+        "symptoms": [
+          "loss of appetite",
+          "stomach pain"
+        ]
+      }
+    },
+    {
+      "i": 127,
+      "bengali": "নমস্কার, আমি কি শেখ সাহেব এর বাড়িতে কথা বলছি? আমি ক্লিনিক থেকে ফলো-আপের জন্য ফোন করছি। কিছুদিন আগে আপনি গ্যাস্ট্রাইটিস এর জন্য ডাক্তার দেখাতে এসেছিলেন। এখন কেমন আছেন? ঠিক আছে, এখনও একটু খিদে না পাওয়া, আর শ্বাসকষ্ট, আর বুকে ব্যথা আছে। ডাক্তার ডোলো, লোসারটান পাঁচ দিন খেতে বলেছেন। ওষুধ চালিয়ে যাবেন। বাড়ির বাকি সবাই ভালো আছেন? হ্যাঁ। ঠিক আছে, সুস্থ থাকুন, দরকার হলে আবার দেখাতে আসবেন।",
+      "pred": {
+        "medicines": [
+          "Paracetamol",
+          "Losartan"
+        ],
+        "diagnoses": [
+          "gastritis"
+        ],
+        "procedures": [],
+        "tests": [
+          "complete blood count"
+        ],
+        "symptoms": [
+          "loss of appetite",
+          "shortness of breath",
+          "chest pain"
+        ]
+      },
+      "gold": {
+        "medicines": [
+          "Paracetamol",
+          "Losartan"
+        ],
+        "diagnoses": [
+          "gastritis"
+        ],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "loss of appetite",
+          "shortness of breath",
+          "chest pain"
+        ]
+      }
+    },
+    {
+      "i": 134,
+      "bengali": "নমস্কার, আমি কি শেখ সাহেব এর বাড়িতে কথা বলছি? আমি ক্লিনিক থেকে ফলো-আপের জন্য ফোন করছি। এখনও একটু জ্বর আছে। কিছুদিন আগে আপনি নিউমোনিয়া, ডেঙ্গু এর জন্য ডাক্তার দেখাতে এসেছিলেন। এখন কেমন আছেন? পরের বার আসার আগে আল্ট্রাসাউন্ড, আর এমআরআই করিয়ে নেবেন। বাড়ির বাকি সবাই ভালো আছেন? হ্যাঁ। ঠিক আছে, সুস্থ থাকুন, দরকার হলে আবার দেখাতে আসবেন।",
+      "pred": {
+        "medicines": [],
+        "diagnoses": [
+          "pneumonia",
+          "diabetes"
+        ],
+        "procedures": [],
+        "tests": [
+          "ultrasound",
+          "MRI"
+        ],
+        "symptoms": [
+          "fever"
+        ]
+      },
+      "gold": {
+        "medicines": [],
+        "diagnoses": [
+          "pneumonia",
+          "dengue"
+        ],
+        "procedures": [],
+        "tests": [
+          "ultrasound",
+          "MRI"
+        ],
+        "symptoms": [
+          "fever"
+        ]
+      }
+    },
+    {
+      "i": 158,
+      "bengali": "নমস্কার, আমি কি সিনহা এর বাড়িতে কথা বলছি? আমি ক্লিনিক থেকে ফলো-আপের জন্য ফোন করছি। এখনও একটু বুকে ব্যথা, আর শ্বাসকষ্ট, আর জয়েন্টে ব্যথা আছে। দেখুন, কিছুদিন আগে আপনি বাত এর জন্য ডাক্তার দেখাতে এসেছিলেন। এখন কেমন আছেন? হুম, পরের বার আসার আগে সিটি স্ক্যান করিয়ে নেবেন। বাড়ির বাকি সবাই ভালো আছেন? হ্যাঁ। ঠিক আছে, সুস্থ থাকুন, দরকার হলে আবার দেখাতে আসবেন।",
+      "pred": {
+        "medicines": [],
+        "diagnoses": [
+          "arthritis"
+        ],
+        "procedures": [],
+        "tests": [
+          "complete blood count"
+        ],
+        "symptoms": [
+          "chest pain",
+          "shortness of breath",
+          "joint pain"
+        ]
+      },
+      "gold": {
+        "medicines": [],
+        "diagnoses": [
+          "arthritis"
+        ],
+        "procedures": [],
+        "tests": [
+          "CT scan"
+        ],
+        "symptoms": [
+          "chest pain",
+          "shortness of breath",
+          "joint pain"
+        ]
+      }
+    },
+    {
+      "i": 164,
+      "bengali": "নমস্কার, আমি কি রায় বাবু এর বাড়িতে কথা বলছি? আমি ক্লিনিক থেকে ফলো-আপের জন্য ফোন করছি। এখনও একটু কাশি, আর দুর্বলতা, আর মাথা ঘোরা আছে। কিছুদিন আগে আপনি গ্যাস্ট্রাইটিস, ডেঙ্গু এর জন্য ডাক্তার দেখাতে এসেছিলেন। এখন কেমন আছেন? বাড়ির বাকি সবাই ভালো আছেন? হ্যাঁ। ঠিক আছে, সুস্থ থাকুন, দরকার হলে আবার দেখাতে আসবেন।",
+      "pred": {
+        "medicines": [],
+        "diagnoses": [
+          "gastritis",
+          "diabetes"
+        ],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "cough",
+          "weakness",
+          "dizziness"
+        ]
+      },
+      "gold": {
+        "medicines": [],
+        "diagnoses": [
+          "gastritis",
+          "dengue"
+        ],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "cough",
+          "weakness",
+          "dizziness"
+        ]
+      }
+    },
+    {
+      "i": 169,
+      "bengali": "হ্যালো, এটা কি নস্কর? আমি ডাক্তারবাবুর চেম্বার থেকে ফলো-আপের জন্য বলছি। কিছুদিন আগে আপনি কিডনিতে পাথর, থাইরয়েড এর জন্য ডাক্তার দেখাতে এসেছিলেন। এখন কেমন আছেন? এখনও একটু মাথা ঘোরা, আর বুকে ব্যথা, আর মাথাব্যথা আছে। বাড়ির বাকি সবাই ভালো আছেন? হ্যাঁ। ঠিক আছে, সুস্থ থাকুন, দরকার হলে আবার দেখাতে আসবেন।",
+      "pred": {
+        "medicines": [],
+        "diagnoses": [
+          "kidney stone",
+          "thyroid disorder"
+        ],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "dizziness",
+          "back pain",
+          "headache"
+        ]
+      },
+      "gold": {
+        "medicines": [],
+        "diagnoses": [
+          "kidney stone",
+          "thyroid disorder"
+        ],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "dizziness",
+          "chest pain",
+          "headache"
+        ]
+      }
+    },
+    {
+      "i": 199,
+      "bengali": "হ্যালো, এটা কি খাতুন? আমি ডাক্তারবাবুর চেম্বার থেকে ফলো-আপের জন্য বলছি। কিছুদিন আগে আপনি ডায়াবেটিস, রক্তাল্পতা এর জন্য ডাক্তার দেখাতে এসেছিলেন। এখন কেমন আছেন? এখনও একটু মাথা ঘোরা, আর দাঁতে ব্যথা, আর কাশি আছে। বাড়ির বাকি সবাই ভালো আছেন? হ্যাঁ। ঠিক আছে, সুস্থ থাকুন, দরকার হলে আবার দেখাতে আসবেন।",
+      "pred": {
+        "medicines": [],
+        "diagnoses": [
+          "diabetes",
+          "anemia"
+        ],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "dizziness",
+          "back pain",
+          "cough"
+        ]
+      },
+      "gold": {
+        "medicines": [],
+        "diagnoses": [
+          "diabetes",
+          "anemia"
+        ],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "dizziness",
+          "toothache",
+          "cough"
+        ]
+      }
+    }
+  ]
+}

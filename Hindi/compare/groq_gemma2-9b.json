@@ -1,0 +1,15 @@
+{
+  "label": "groq_gemma2-9b",
+  "model": "gemma2-9b-it",
+  "tested": 0,
+  "exact": 0,
+  "accuracy_pct": 0.0,
+  "api_fails": 200,
+  "errors": {
+    "typos": 0,
+    "missed": 0,
+    "extra": 0,
+    "bad_json": 0
+  },
+  "cases": []
+}

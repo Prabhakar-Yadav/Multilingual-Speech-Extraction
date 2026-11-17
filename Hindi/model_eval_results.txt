@@ -1,0 +1,225 @@
+HINDI FINE-TUNING - FULL EVALUATION RESULTS
+Model: Llama-3.2-1B fine-tuned with QLoRA on a local GPU
+Task: read a HINDI doctor-patient conversation -> output the medical terms (English JSON)
+Score: 19/20 exact match on conversations the model had NEVER seen
+==========================================================================================
+
+[Example 1]  (EXACT MATCH)
+HINDI CONVERSATION (what the model read):
+हैलो, क्या यह अहमद साहब हैं? मैं डॉक्टर साहब के यहाँ से फॉलो-अप के लिए बात कर रहा हूँ। डॉक्टर ने इंसुलिन सुबह-शाम लेने को कहा है। दवा जारी रखिए। ठीक है, अगली बार आने से पहले ब्लड शुगर टेस्ट करवा लीजिए। अभी भी थोड़ा पैर में दर्द, और कमजोरी, और दांत में दर्द है। कुछ दिन पहले आप डॉक्टर को दिखाने आए थे। अब तबीयत कैसी है? घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।
+
+MODEL OUTPUT (terms it extracted):
+{"medicines": ["Insulin"], "diagnoses": [], "procedures": [], "tests": ["blood sugar test"], "symptoms": ["leg pain", "weakness", "toothache"]}
+
+CORRECT ANSWER:
+{"medicines": ["Insulin"], "diagnoses": [], "procedures": [], "tests": ["blood sugar test"], "symptoms": ["leg pain", "weakness", "toothache"]}
+------------------------------------------------------------------------------------------
+
+[Example 2]  (EXACT MATCH)
+HINDI CONVERSATION (what the model read):
+हैलो, क्या यह रीना देवी हैं? मैं डॉक्टर साहब के यहाँ से फॉलो-अप के लिए बात कर रहा हूँ। हम्म, अभी भी थोड़ा पेट दर्द, और उल्टी, और सिरदर्द है। डॉक्टर ने एमलोडिपिन पाँच दिन तक लेने को कहा है। दवा जारी रखिए। हाँ हाँ, कुछ दिन पहले आप निमोनिया के लिए डॉक्टर को दिखाने आए थे। अब कैसा लग रहा है? घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।
+
+MODEL OUTPUT (terms it extracted):
+{"medicines": ["Amlodipine"], "diagnoses": ["pneumonia"], "procedures": [], "tests": [], "symptoms": ["stomach pain", "vomiting", "headache"]}
+
+CORRECT ANSWER:
+{"medicines": ["Amlodipine"], "diagnoses": ["pneumonia"], "procedures": [], "tests": [], "symptoms": ["stomach pain", "vomiting", "headache"]}
+------------------------------------------------------------------------------------------
+
+[Example 3]  (EXACT MATCH)
+HINDI CONVERSATION (what the model read):
+हैलो, क्या यह अहमद साहब हैं? मैं डॉक्टर साहब के यहाँ से फॉलो-अप के लिए बात कर रहा हूँ। ठीक है, डॉक्टर ने मेटफॉर्मिन दिन में दो बार लेने को कहा है। दवा जारी रखिए। अच्छा, अभी भी थोड़ा कमजोरी, और पैर में दर्द, और दांत में दर्द है। अच्छा, कुछ दिन पहले आप डॉक्टर को दिखाने आए थे। अब तबीयत कैसी है? घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।
+
+MODEL OUTPUT (terms it extracted):
+{"medicines": ["Metformin"], "diagnoses": [], "procedures": [], "tests": [], "symptoms": ["weakness", "leg pain", "toothache"]}
+
+CORRECT ANSWER:
+{"medicines": ["Metformin"], "diagnoses": [], "procedures": [], "tests": [], "symptoms": ["weakness", "leg pain", "toothache"]}
+------------------------------------------------------------------------------------------
+
+[Example 4]  (EXACT MATCH)
+HINDI CONVERSATION (what the model read):
+नमस्ते, क्या मैं रीना देवी के घर बात कर रहा हूँ? मैं क्लिनिक से फॉलो-अप के लिए कॉल कर रहा हूँ। कुछ दिन पहले आप निमोनिया के लिए डॉक्टर को दिखाने आए थे। अब कैसा लग रहा है? अगली बार आने से पहले थायराइड टेस्ट, और सीटी स्कैन करवा लीजिए। हम्म, अभी भी थोड़ा गले में खराश है। घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।
+
+MODEL OUTPUT (terms it extracted):
+{"medicines": [], "diagnoses": ["pneumonia"], "procedures": [], "tests": ["thyroid test", "CT scan"], "symptoms": ["sore throat"]}
+
+CORRECT ANSWER:
+{"medicines": [], "diagnoses": ["pneumonia"], "procedures": [], "tests": ["thyroid test", "CT scan"], "symptoms": ["sore throat"]}
+------------------------------------------------------------------------------------------
+
+[Example 5]  (EXACT MATCH)
+HINDI CONVERSATION (what the model read):
+हैलो, क्या यह गुप्ता जी हैं? मैं डॉक्टर साहब के यहाँ से फॉलो-अप के लिए बात कर रहा हूँ। अच्छा, कुछ दिन पहले आप दमा के लिए डॉक्टर को दिखाने आए थे। अब कैसा लग रहा है? अभी भी थोड़ा पेट दर्द, और सांस लेने में तकलीफ है। घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।
+
+MODEL OUTPUT (terms it extracted):
+{"medicines": [], "diagnoses": ["asthma"], "procedures": [], "tests": [], "symptoms": ["stomach pain", "shortness of breath"]}
+
+CORRECT ANSWER:
+{"medicines": [], "diagnoses": ["asthma"], "procedures": [], "tests": [], "symptoms": ["stomach pain", "shortness of breath"]}
+------------------------------------------------------------------------------------------
+
+[Example 6]  (EXACT MATCH)
+HINDI CONVERSATION (what the model read):
+नमस्ते, क्या मैं वर्मा जी के घर बात कर रहा हूँ? मैं क्लिनिक से फॉलो-अप के लिए कॉल कर रहा हूँ। ठीक है, अगली बार आने से पहले एमआरआई, और थायराइड टेस्ट करवा लीजिए। अभी भी थोड़ा पेट दर्द, और पैर में दर्द है। कुछ दिन पहले आप दिल की बीमारी, किडनी स्टोन के लिए डॉक्टर को दिखाने आए थे। अब कैसा लग रहा है? घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।
+
+MODEL OUTPUT (terms it extracted):
+{"medicines": [], "diagnoses": ["heart disease", "kidney stone"], "procedures": [], "tests": ["MRI", "thyroid test"], "symptoms": ["stomach pain", "leg pain"]}
+
+CORRECT ANSWER:
+{"medicines": [], "diagnoses": ["heart disease", "kidney stone"], "procedures": [], "tests": ["MRI", "thyroid test"], "symptoms": ["stomach pain", "leg pain"]}
+------------------------------------------------------------------------------------------
+
+[Example 7]  (EXACT MATCH)
+HINDI CONVERSATION (what the model read):
+नमस्ते, क्या मैं शर्मा जी के घर बात कर रहा हूँ? क्लिनिक से फॉलो-अप कॉल है। अब तबीयत कैसी है? जी, अब बिल्कुल ठीक हूँ, कोई दिक्कत नहीं। अच्छा, घर में सब ठीक? जी हाँ। ठीक है, धन्यवाद, स्वस्थ रहिए।
+
+MODEL OUTPUT (terms it extracted):
+{"medicines": [], "diagnoses": [], "procedures": [], "tests": [], "symptoms": []}
+
+CORRECT ANSWER:
+{"medicines": [], "diagnoses": [], "procedures": [], "tests": [], "symptoms": []}
+------------------------------------------------------------------------------------------
+
+[Example 8]  (near-miss)
+HINDI CONVERSATION (what the model read):
+नमस्ते, क्या मैं शर्मा जी के घर बात कर रहा हूँ? मैं क्लिनिक से फॉलो-अप के लिए कॉल कर रहा हूँ। देखिए, डॉक्टर ने एटोरवास्टेटिन, पैरासिटामोल सुबह-शाम लेने को कहा है। दवा जारी रखिए। कुछ दिन पहले आप डॉक्टर को दिखाने आए थे। अब तबीयत कैसी है? हम्म, हमने आपके लिए टांके, छोटी सर्जरी की सलाह दी है। अभी भी थोड़ा सांस लेने में तकलीफ, और गले में खराश, और पैर में दर्द है। घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।
+
+MODEL OUTPUT (terms it extracted):
+{"medicines": ["Atorvastate", "Paracetamol"], "diagnoses": [], "procedures": ["stitches", "minor surgery"], "tests": [], "symptoms": ["shortness of breath", "sore throat", "leg pain"]}
+
+CORRECT ANSWER:
+{"medicines": ["Atorvastatin", "Paracetamol"], "diagnoses": [], "procedures": ["stitches", "minor surgery"], "tests": [], "symptoms": ["shortness of breath", "sore throat", "leg pain"]}
+------------------------------------------------------------------------------------------
+
+[Example 9]  (EXACT MATCH)
+HINDI CONVERSATION (what the model read):
+हैलो, क्या यह शर्मा जी हैं? मैं डॉक्टर साहब के यहाँ से फॉलो-अप के लिए बात कर रहा हूँ। अगली बार आने से पहले ईसीजी, और थायराइड टेस्ट करवा लीजिए। अभी भी थोड़ा भूख न लगना, और पेट दर्द है। कुछ दिन पहले आप निमोनिया के लिए डॉक्टर को दिखाने आए थे। अब कैसा लग रहा है? घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।
+
+MODEL OUTPUT (terms it extracted):
+{"medicines": [], "diagnoses": ["pneumonia"], "procedures": [], "tests": ["ECG", "thyroid test"], "symptoms": ["loss of appetite", "stomach pain"]}
+
+CORRECT ANSWER:
+{"medicines": [], "diagnoses": ["pneumonia"], "procedures": [], "tests": ["ECG", "thyroid test"], "symptoms": ["loss of appetite", "stomach pain"]}
+------------------------------------------------------------------------------------------
+
+[Example 10]  (EXACT MATCH)
+HINDI CONVERSATION (what the model read):
+नमस्ते, क्या मैं रीना देवी के घर बात कर रहा हूँ? मैं क्लिनिक से फॉलो-अप के लिए कॉल कर रहा हूँ। जी, अभी भी थोड़ा बुखार है। जी, कुछ दिन पहले आप किडनी स्टोन के लिए डॉक्टर को दिखाने आए थे। अब कैसा लग रहा है? घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।
+
+MODEL OUTPUT (terms it extracted):
+{"medicines": [], "diagnoses": ["kidney stone"], "procedures": [], "tests": [], "symptoms": ["fever"]}
+
+CORRECT ANSWER:
+{"medicines": [], "diagnoses": ["kidney stone"], "procedures": [], "tests": [], "symptoms": ["fever"]}
+------------------------------------------------------------------------------------------
+
+[Example 11]  (EXACT MATCH)
+HINDI CONVERSATION (what the model read):
+नमस्ते, क्या मैं वर्मा जी के घर बात कर रहा हूँ? क्लिनिक से फॉलो-अप कॉल है। अब तबीयत कैसी है? जी, अब बिल्कुल ठीक हूँ, कोई दिक्कत नहीं। अच्छा, घर में सब ठीक? जी हाँ। ठीक है, धन्यवाद, स्वस्थ रहिए।
+
+MODEL OUTPUT (terms it extracted):
+{"medicines": [], "diagnoses": [], "procedures": [], "tests": [], "symptoms": []}
+
+CORRECT ANSWER:
+{"medicines": [], "diagnoses": [], "procedures": [], "tests": [], "symptoms": []}
+------------------------------------------------------------------------------------------
+
+[Example 12]  (EXACT MATCH)
+HINDI CONVERSATION (what the model read):
+नमस्ते, क्या मैं गुप्ता जी के घर बात कर रहा हूँ? मैं क्लिनिक से फॉलो-अप के लिए कॉल कर रहा हूँ। जी, अभी भी थोड़ा कमर दर्द है। हाँ हाँ, कुछ दिन पहले आप डॉक्टर को दिखाने आए थे। अब तबीयत कैसी है? जी, हमने आपके लिए इंजेक्शन, फिजियोथेरेपी की सलाह दी है। अगली बार आने से पहले ब्लड शुगर टेस्ट करवा लीजिए। घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।
+
+MODEL OUTPUT (terms it extracted):
+{"medicines": [], "diagnoses": [], "procedures": ["injection", "physiotherapy"], "tests": ["blood sugar test"], "symptoms": ["back pain"]}
+
+CORRECT ANSWER:
+{"medicines": [], "diagnoses": [], "procedures": ["injection", "physiotherapy"], "tests": ["blood sugar test"], "symptoms": ["back pain"]}
+------------------------------------------------------------------------------------------
+
+[Example 13]  (EXACT MATCH)
+HINDI CONVERSATION (what the model read):
+नमस्ते, क्या मैं वर्मा जी के घर बात कर रहा हूँ? मैं क्लिनिक से फॉलो-अप के लिए कॉल कर रहा हूँ। अच्छा, कुछ दिन पहले आप डॉक्टर को दिखाने आए थे। अब तबीयत कैसी है? अभी भी थोड़ा बुखार, और सीने में दर्द है। जी, अगली बार आने से पहले ईसीजी करवा लीजिए। घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।
+
+MODEL OUTPUT (terms it extracted):
+{"medicines": [], "diagnoses": [], "procedures": [], "tests": ["ECG"], "symptoms": ["fever", "chest pain"]}
+
+CORRECT ANSWER:
+{"medicines": [], "diagnoses": [], "procedures": [], "tests": ["ECG"], "symptoms": ["fever", "chest pain"]}
+------------------------------------------------------------------------------------------
+
+[Example 14]  (EXACT MATCH)
+HINDI CONVERSATION (what the model read):
+नमस्ते, क्या मैं गुप्ता जी के घर बात कर रहा हूँ? मैं क्लिनिक से फॉलो-अप के लिए कॉल कर रहा हूँ। अच्छा, कुछ दिन पहले आप डॉक्टर को दिखाने आए थे। अब तबीयत कैसी है? अभी भी थोड़ा सांस लेने में तकलीफ है। डॉक्टर ने पैन्टोप्राज़ोल, सेटिरिज़िन सुबह-शाम लेने को कहा है। दवा जारी रखिए। घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।
+
+MODEL OUTPUT (terms it extracted):
+{"medicines": ["Pantoprazole", "Cetirizine"], "diagnoses": [], "procedures": [], "tests": [], "symptoms": ["shortness of breath"]}
+
+CORRECT ANSWER:
+{"medicines": ["Pantoprazole", "Cetirizine"], "diagnoses": [], "procedures": [], "tests": [], "symptoms": ["shortness of breath"]}
+------------------------------------------------------------------------------------------
+
+[Example 15]  (EXACT MATCH)
+HINDI CONVERSATION (what the model read):
+हैलो, क्या यह सुनीता जी हैं? मैं डॉक्टर साहब के यहाँ से फॉलो-अप के लिए बात कर रहा हूँ। डॉक्टर ने ओमेप्राज़ोल, एमोक्सिसिलिन सुबह-शाम लेने को कहा है। दवा जारी रखिए। अच्छा, कुछ दिन पहले आप किडनी स्टोन, निमोनिया के लिए डॉक्टर को दिखाने आए थे। अब कैसा लग रहा है? अभी भी थोड़ा उल्टी, और जोड़ों में दर्द है। घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।
+
+MODEL OUTPUT (terms it extracted):
+{"medicines": ["Omeprazole", "Amoxicillin"], "diagnoses": ["kidney stone", "pneumonia"], "procedures": [], "tests": [], "symptoms": ["vomiting", "joint pain"]}
+
+CORRECT ANSWER:
+{"medicines": ["Omeprazole", "Amoxicillin"], "diagnoses": ["kidney stone", "pneumonia"], "procedures": [], "tests": [], "symptoms": ["vomiting", "joint pain"]}
+------------------------------------------------------------------------------------------
+
+[Example 16]  (EXACT MATCH)
+HINDI CONVERSATION (what the model read):
+नमस्ते, क्या मैं वर्मा जी के घर बात कर रहा हूँ? क्लिनिक से फॉलो-अप कॉल है। अब तबीयत कैसी है? जी, अब बिल्कुल ठीक हूँ, कोई दिक्कत नहीं। अच्छा, घर में सब ठीक? जी हाँ। ठीक है, धन्यवाद, स्वस्थ रहिए।
+
+MODEL OUTPUT (terms it extracted):
+{"medicines": [], "diagnoses": [], "procedures": [], "tests": [], "symptoms": []}
+
+CORRECT ANSWER:
+{"medicines": [], "diagnoses": [], "procedures": [], "tests": [], "symptoms": []}
+------------------------------------------------------------------------------------------
+
+[Example 17]  (EXACT MATCH)
+HINDI CONVERSATION (what the model read):
+नमस्ते, क्या मैं शर्मा जी के घर बात कर रहा हूँ? क्लिनिक से फॉलो-अप कॉल है। अब तबीयत कैसी है? जी, अब बिल्कुल ठीक हूँ, कोई दिक्कत नहीं। अच्छा, घर में सब ठीक? जी हाँ। ठीक है, धन्यवाद, स्वस्थ रहिए।
+
+MODEL OUTPUT (terms it extracted):
+{"medicines": [], "diagnoses": [], "procedures": [], "tests": [], "symptoms": []}
+
+CORRECT ANSWER:
+{"medicines": [], "diagnoses": [], "procedures": [], "tests": [], "symptoms": []}
+------------------------------------------------------------------------------------------
+
+[Example 18]  (EXACT MATCH)
+HINDI CONVERSATION (what the model read):
+नमस्ते, क्या मैं रमेश जी के घर बात कर रहा हूँ? क्लिनिक से फॉलो-अप कॉल है। अब तबीयत कैसी है? जी, अब बिल्कुल ठीक हूँ, कोई दिक्कत नहीं। अच्छा, घर में सब ठीक? जी हाँ। ठीक है, धन्यवाद, स्वस्थ रहिए।
+
+MODEL OUTPUT (terms it extracted):
+{"medicines": [], "diagnoses": [], "procedures": [], "tests": [], "symptoms": []}
+
+CORRECT ANSWER:
+{"medicines": [], "diagnoses": [], "procedures": [], "tests": [], "symptoms": []}
+------------------------------------------------------------------------------------------
+
+[Example 19]  (EXACT MATCH)
+HINDI CONVERSATION (what the model read):
+हैलो, क्या यह रमेश जी हैं? मैं डॉक्टर साहब के यहाँ से फॉलो-अप के लिए बात कर रहा हूँ। जी, कुछ दिन पहले आप डॉक्टर को दिखाने आए थे। अब तबीयत कैसी है? अभी भी थोड़ा गले में खराश, और दांत में दर्द है। घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।
+
+MODEL OUTPUT (terms it extracted):
+{"medicines": [], "diagnoses": [], "procedures": [], "tests": [], "symptoms": ["sore throat", "toothache"]}
+
+CORRECT ANSWER:
+{"medicines": [], "diagnoses": [], "procedures": [], "tests": [], "symptoms": ["sore throat", "toothache"]}
+------------------------------------------------------------------------------------------
+
+[Example 20]  (EXACT MATCH)
+HINDI CONVERSATION (what the model read):
+नमस्ते, क्या मैं रमेश जी के घर बात कर रहा हूँ? मैं क्लिनिक से फॉलो-अप के लिए कॉल कर रहा हूँ। अभी भी थोड़ा पेट दर्द, और पैर में दर्द है। कुछ दिन पहले आप डॉक्टर को दिखाने आए थे। अब तबीयत कैसी है? हाँ हाँ, अगली बार आने से पहले ब्लड शुगर टेस्ट करवा लीजिए। घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।
+
+MODEL OUTPUT (terms it extracted):
+{"medicines": [], "diagnoses": [], "procedures": [], "tests": ["blood sugar test"], "symptoms": ["stomach pain", "leg pain"]}
+
+CORRECT ANSWER:
+{"medicines": [], "diagnoses": [], "procedures": [], "tests": ["blood sugar test"], "symptoms": ["stomach pain", "leg pain"]}
+------------------------------------------------------------------------------------------

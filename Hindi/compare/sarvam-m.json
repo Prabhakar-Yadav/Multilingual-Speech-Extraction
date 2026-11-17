@@ -1,0 +1,15 @@
+{
+  "label": "sarvam-m",
+  "model": "sarvam-m",
+  "tested": 0,
+  "exact": 0,
+  "accuracy_pct": 0.0,
+  "api_fails": 200,
+  "errors": {
+    "typos": 0,
+    "missed": 0,
+    "extra": 0,
+    "bad_json": 0
+  },
+  "cases": []
+}

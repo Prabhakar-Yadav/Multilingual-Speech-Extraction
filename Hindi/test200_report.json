@@ -1,0 +1,440 @@
+{
+  "test_size": 200,
+  "exact_match": 190,
+  "wrong": 10,
+  "accuracy_pct": 95.0,
+  "error_breakdown": {
+    "typos_drug/term_spelling": 6,
+    "missed_terms": 2,
+    "extra_terms": 2,
+    "invalid_json": 0
+  },
+  "typo_examples": [
+    "medicines: 'Atorvastate' vs 'Atorvastatin'",
+    "medicines: 'Atorvastate' vs 'Atorvastatin'",
+    "medicines: 'Atorvastate' vs 'Atorvastatin'",
+    "medicines: 'Atorvastate' vs 'Atorvastatin'",
+    "medicines: 'Atorvastate' vs 'Atorvastatin'",
+    "medicines: 'Atorvastatein' vs 'Atorvastatin'"
+  ],
+  "missed_examples": [
+    "tests: 'ECG'",
+    "tests: 'ECG'"
+  ],
+  "extra_examples": [
+    "tests: 'X-ray'",
+    "tests: 'X-ray'"
+  ],
+  "wrong_cases": [
+    {
+      "i": 16,
+      "kind": "term_diff",
+      "diff": {},
+      "hindi": "नमस्ते, क्या मैं अहमद साहब के घर बात कर रहा हूँ? मैं क्लिनिक से फॉलो-अप के लिए कॉल कर रहा हूँ। अच्छा, अभी भी थोड़ा खांसी है। डॉक्टर ने ओमेप्राज़ोल, एमोक्सिसिलिन सुबह-शाम लेने को कहा है। दवा जारी रखिए। कुछ दिन पहले आप निमोनिया के लिए डॉक्टर को दिखाने आए थे। अब कैसा लग रहा है? घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [
+          "Omeprazole",
+          "Amoxicillin"
+        ],
+        "diagnoses": [
+          "pneumonia"
+        ],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "cough"
+        ],
+        "follow-up": "next week"
+      },
+      "gold": {
+        "medicines": [
+          "Omeprazole",
+          "Amoxicillin"
+        ],
+        "diagnoses": [
+          "pneumonia"
+        ],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "cough"
+        ]
+      }
+    },
+    {
+      "i": 38,
+      "kind": "term_diff",
+      "diff": {
+        "medicines": {
+          "missing_from_pred": [
+            "Atorvastatin"
+          ],
+          "extra_in_pred": [
+            "Atorvastate"
+          ]
+        }
+      },
+      "hindi": "हैलो, क्या यह अहमद साहब हैं? मैं डॉक्टर साहब के यहाँ से फॉलो-अप के लिए बात कर रहा हूँ। अभी भी थोड़ा दांत में दर्द, और चक्कर आना है। डॉक्टर ने एटोरवास्टेटिन पाँच दिन तक लेने को कहा है। दवा जारी रखिए। कुछ दिन पहले आप डॉक्टर को दिखाने आए थे। अब तबीयत कैसी है? घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [
+          "Atorvastate"
+        ],
+        "diagnoses": [],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "toothache",
+          "dizziness"
+        ]
+      },
+      "gold": {
+        "medicines": [
+          "Atorvastatin"
+        ],
+        "diagnoses": [],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "toothache",
+          "dizziness"
+        ]
+      }
+    },
+    {
+      "i": 90,
+      "kind": "term_diff",
+      "diff": {
+        "medicines": {
+          "missing_from_pred": [
+            "Atorvastatin"
+          ],
+          "extra_in_pred": [
+            "Atorvastate"
+          ]
+        }
+      },
+      "hindi": "नमस्ते, क्या मैं रीना देवी के घर बात कर रहा हूँ? मैं क्लिनिक से फॉलो-अप के लिए कॉल कर रहा हूँ। हमने आपके लिए फिजियोथेरेपी, छोटी सर्जरी की सलाह दी है। डॉक्टर ने एटोरवास्टेटिन, ओमेप्राज़ोल खाने के बाद लेने को कहा है। दवा जारी रखिए। अभी भी थोड़ा दांत में दर्द है। हाँ हाँ, कुछ दिन पहले आप डॉक्टर को दिखाने आए थे। अब तबीयत कैसी है? घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [
+          "Atorvastate",
+          "Omeprazole"
+        ],
+        "diagnoses": [],
+        "procedures": [
+          "physiotherapy",
+          "minor surgery"
+        ],
+        "tests": [],
+        "symptoms": [
+          "toothache"
+        ]
+      },
+      "gold": {
+        "medicines": [
+          "Atorvastatin",
+          "Omeprazole"
+        ],
+        "diagnoses": [],
+        "procedures": [
+          "physiotherapy",
+          "minor surgery"
+        ],
+        "tests": [],
+        "symptoms": [
+          "toothache"
+        ]
+      }
+    },
+    {
+      "i": 102,
+      "kind": "term_diff",
+      "diff": {
+        "medicines": {
+          "missing_from_pred": [
+            "Atorvastatin"
+          ],
+          "extra_in_pred": [
+            "Atorvastate"
+          ]
+        }
+      },
+      "hindi": "नमस्ते, क्या मैं गुप्ता जी के घर बात कर रहा हूँ? मैं क्लिनिक से फॉलो-अप के लिए कॉल कर रहा हूँ। देखिए, अभी भी थोड़ा पैर में दर्द है। डॉक्टर ने एटोरवास्टेटिन पाँच दिन तक लेने को कहा है। दवा जारी रखिए। ठीक है, अगली बार आने से पहले सीटी स्कैन करवा लीजिए। हाँ हाँ, हमने आपके लिए फिजियोथेरेपी, दांत निकालना की सलाह दी है। कुछ दिन पहले आप डॉक्टर को दिखाने आए थे। अब तबीयत कैसी है? घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [
+          "Atorvastate"
+        ],
+        "diagnoses": [],
+        "procedures": [
+          "physiotherapy",
+          "tooth extraction"
+        ],
+        "tests": [
+          "CT scan"
+        ],
+        "symptoms": [
+          "leg pain"
+        ]
+      },
+      "gold": {
+        "medicines": [
+          "Atorvastatin"
+        ],
+        "diagnoses": [],
+        "procedures": [
+          "physiotherapy",
+          "tooth extraction"
+        ],
+        "tests": [
+          "CT scan"
+        ],
+        "symptoms": [
+          "leg pain"
+        ]
+      }
+    },
+    {
+      "i": 115,
+      "kind": "term_diff",
+      "diff": {
+        "tests": {
+          "missing_from_pred": [
+            "ECG"
+          ],
+          "extra_in_pred": [
+            "X-ray"
+          ]
+        }
+      },
+      "hindi": "हैलो, क्या यह रमेश जी हैं? मैं डॉक्टर साहब के यहाँ से फॉलो-अप के लिए बात कर रहा हूँ। अगली बार आने से पहले ईसीजी, और सीबीसी करवा लीजिए। कुछ दिन पहले आप डॉक्टर को दिखाने आए थे। अब तबीयत कैसी है? अभी भी थोड़ा कमर दर्द है। घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [],
+        "diagnoses": [],
+        "procedures": [],
+        "tests": [
+          "X-ray",
+          "complete blood count"
+        ],
+        "symptoms": [
+          "back pain"
+        ]
+      },
+      "gold": {
+        "medicines": [],
+        "diagnoses": [],
+        "procedures": [],
+        "tests": [
+          "ECG",
+          "complete blood count"
+        ],
+        "symptoms": [
+          "back pain"
+        ]
+      }
+    },
+    {
+      "i": 122,
+      "kind": "term_diff",
+      "diff": {
+        "medicines": {
+          "missing_from_pred": [
+            "Atorvastatin"
+          ],
+          "extra_in_pred": [
+            "Atorvastate"
+          ]
+        }
+      },
+      "hindi": "नमस्ते, क्या मैं शर्मा जी के घर बात कर रहा हूँ? मैं क्लिनिक से फॉलो-अप के लिए कॉल कर रहा हूँ। हमने आपके लिए इंजेक्शन की सलाह दी है। अच्छा, अभी भी थोड़ा कमजोरी है। डॉक्टर ने एटोरवास्टेटिन, इंसुलिन पाँच दिन तक लेने को कहा है। दवा जारी रखिए। हाँ हाँ, कुछ दिन पहले आप किडनी स्टोन के लिए डॉक्टर को दिखाने आए थे। अब कैसा लग रहा है? घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [
+          "Atorvastate",
+          "Insulin"
+        ],
+        "diagnoses": [
+          "kidney stone"
+        ],
+        "procedures": [
+          "injection"
+        ],
+        "tests": [],
+        "symptoms": [
+          "weakness"
+        ]
+      },
+      "gold": {
+        "medicines": [
+          "Atorvastatin",
+          "Insulin"
+        ],
+        "diagnoses": [
+          "kidney stone"
+        ],
+        "procedures": [
+          "injection"
+        ],
+        "tests": [],
+        "symptoms": [
+          "weakness"
+        ]
+      }
+    },
+    {
+      "i": 128,
+      "kind": "term_diff",
+      "diff": {
+        "medicines": {
+          "missing_from_pred": [
+            "Atorvastatin"
+          ],
+          "extra_in_pred": [
+            "Atorvastate"
+          ]
+        }
+      },
+      "hindi": "नमस्ते, क्या मैं गुप्ता जी के घर बात कर रहा हूँ? मैं क्लिनिक से फॉलो-अप के लिए कॉल कर रहा हूँ। अभी भी थोड़ा सांस लेने में तकलीफ, और पैर में दर्द, और भूख न लगना है। डॉक्टर ने एटोरवास्टेटिन पाँच दिन तक लेने को कहा है। दवा जारी रखिए। कुछ दिन पहले आप डॉक्टर को दिखाने आए थे। अब तबीयत कैसी है? घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [
+          "Atorvastate"
+        ],
+        "diagnoses": [],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "shortness of breath",
+          "leg pain",
+          "loss of appetite"
+        ]
+      },
+      "gold": {
+        "medicines": [
+          "Atorvastatin"
+        ],
+        "diagnoses": [],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "shortness of breath",
+          "leg pain",
+          "loss of appetite"
+        ]
+      }
+    },
+    {
+      "i": 141,
+      "kind": "term_diff",
+      "diff": {},
+      "hindi": "हैलो, क्या यह शर्मा जी हैं? मैं डॉक्टर साहब के यहाँ से फॉलो-अप के लिए बात कर रहा हूँ। कुछ दिन पहले आप गठिया, मधुमेह के लिए डॉक्टर को दिखाने आए थे। अब कैसा लग रहा है? अभी भी थोड़ा दांत में दर्द है। डॉक्टर ने डोलो, पैरासिटामोल पाँच दिन तक लेने को कहा है। दवा जारी रखिए। घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [
+          "Paracetamol"
+        ],
+        "diagnoses": [
+          "arthritis",
+          "diabetes"
+        ],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "toothache"
+        ]
+      },
+      "gold": {
+        "medicines": [
+          "Paracetamol",
+          "Paracetamol"
+        ],
+        "diagnoses": [
+          "arthritis",
+          "diabetes"
+        ],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "toothache"
+        ]
+      }
+    },
+    {
+      "i": 165,
+      "kind": "term_diff",
+      "diff": {
+        "tests": {
+          "missing_from_pred": [
+            "ECG"
+          ],
+          "extra_in_pred": [
+            "X-ray"
+          ]
+        }
+      },
+      "hindi": "हैलो, क्या यह रीना देवी हैं? मैं डॉक्टर साहब के यहाँ से फॉलो-अप के लिए बात कर रहा हूँ। अभी भी थोड़ा पैर में दर्द है। कुछ दिन पहले आप डॉक्टर को दिखाने आए थे। अब तबीयत कैसी है? अगली बार आने से पहले ईसीजी करवा लीजिए। हमने आपके लिए बायोप्सी, दांत निकालना की सलाह दी है। घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [],
+        "diagnoses": [],
+        "procedures": [
+          "biopsy",
+          "tooth extraction"
+        ],
+        "tests": [
+          "X-ray"
+        ],
+        "symptoms": [
+          "leg pain"
+        ]
+      },
+      "gold": {
+        "medicines": [],
+        "diagnoses": [],
+        "procedures": [
+          "biopsy",
+          "tooth extraction"
+        ],
+        "tests": [
+          "ECG"
+        ],
+        "symptoms": [
+          "leg pain"
+        ]
+      }
+    },
+    {
+      "i": 166,
+      "kind": "term_diff",
+      "diff": {
+        "medicines": {
+          "missing_from_pred": [
+            "Atorvastatin"
+          ],
+          "extra_in_pred": [
+            "Atorvastatein"
+          ]
+        }
+      },
+      "hindi": "नमस्ते, क्या मैं अहमद साहब के घर बात कर रहा हूँ? मैं क्लिनिक से फॉलो-अप के लिए कॉल कर रहा हूँ। अभी भी थोड़ा पेट दर्द है। डॉक्टर ने एटोरवास्टेटिन, पैरासिटामोल खाने के बाद लेने को कहा है। दवा जारी रखिए। कुछ दिन पहले आप डॉक्टर को दिखाने आए थे। अब तबीयत कैसी है? घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [
+          "Atorvastatein",
+          "Paracetamol"
+        ],
+        "diagnoses": [],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "stomach pain"
+        ]
+      },
+      "gold": {
+        "medicines": [
+          "Atorvastatin",
+          "Paracetamol"
+        ],
+        "diagnoses": [],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "stomach pain"
+        ]
+      }
+    }
+  ]
+}

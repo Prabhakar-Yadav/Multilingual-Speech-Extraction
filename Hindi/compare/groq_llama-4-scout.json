@@ -1,0 +1,1127 @@
+{
+  "label": "groq_llama-4-scout",
+  "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+  "tested": 200,
+  "exact": 166,
+  "accuracy_pct": 83.0,
+  "api_fails": 0,
+  "errors": {
+    "typos": 0,
+    "missed": 14,
+    "extra": 18,
+    "bad_json": 0
+  },
+  "cases": [
+    {
+      "i": 15,
+      "hindi": "नमस्ते, क्या मैं वर्मा जी के घर बात कर रहा हूँ? मैं क्लिनिक से फॉलो-अप के लिए कॉल कर रहा हूँ। कुछ दिन पहले आप डॉक्टर को दिखाने आए थे। अब तबीयत कैसी है? ठीक है, हमने आपके लिए छोटी सर्जरी, दांत निकालना की सलाह दी है। डॉक्टर ने इबुप्रोफेन, पैन्टोप्राज़ोल सुबह-शाम लेने को कहा है। दवा जारी रखिए। हम्म, अभी भी थोड़ा जोड़ों में दर्द, और दांत में दर्द है। घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [
+          "Ibuprofen",
+          "Pantoprazole"
+        ],
+        "diagnoses": [],
+        "procedures": [
+          "tooth extraction"
+        ],
+        "tests": [],
+        "symptoms": [
+          "joint pain",
+          "toothache"
+        ]
+      },
+      "gold": {
+        "medicines": [
+          "Ibuprofen",
+          "Pantoprazole"
+        ],
+        "diagnoses": [],
+        "procedures": [
+          "minor surgery",
+          "tooth extraction"
+        ],
+        "tests": [],
+        "symptoms": [
+          "joint pain",
+          "toothache"
+        ]
+      }
+    },
+    {
+      "i": 16,
+      "hindi": "नमस्ते, क्या मैं अहमद साहब के घर बात कर रहा हूँ? मैं क्लिनिक से फॉलो-अप के लिए कॉल कर रहा हूँ। अच्छा, अभी भी थोड़ा खांसी है। डॉक्टर ने ओमेप्राज़ोल, एमोक्सिसिलिन सुबह-शाम लेने को कहा है। दवा जारी रखिए। कुछ दिन पहले आप निमोनिया के लिए डॉक्टर को दिखाने आए थे। अब कैसा लग रहा है? घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [
+          "Amoxicillin",
+          "Omeprazole"
+        ],
+        "diagnoses": [
+          "pneumonia"
+        ],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "cough"
+        ]
+      },
+      "gold": {
+        "medicines": [
+          "Omeprazole",
+          "Amoxicillin"
+        ],
+        "diagnoses": [
+          "pneumonia"
+        ],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "cough"
+        ]
+      }
+    },
+    {
+      "i": 20,
+      "hindi": "हैलो, क्या यह सुनीता जी हैं? मैं डॉक्टर साहब के यहाँ से फॉलो-अप के लिए बात कर रहा हूँ। अच्छा, अभी भी थोड़ा सीने में दर्द है। कुछ दिन पहले आप दांत का संक्रमण के लिए डॉक्टर को दिखाने आए थे। अब कैसा लग रहा है? घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [],
+        "diagnoses": [],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "chest pain"
+        ]
+      },
+      "gold": {
+        "medicines": [],
+        "diagnoses": [
+          "tooth infection"
+        ],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "chest pain"
+        ]
+      }
+    },
+    {
+      "i": 22,
+      "hindi": "हैलो, क्या यह रीना देवी हैं? मैं डॉक्टर साहब के यहाँ से फॉलो-अप के लिए बात कर रहा हूँ। हमने आपके लिए ड्रेसिंग, इंजेक्शन की सलाह दी है। जी, अभी भी थोड़ा सांस लेने में तकलीफ, और उल्टी है। अगली बार आने से पहले यूरिन टेस्ट करवा लीजिए। हाँ हाँ, कुछ दिन पहले आप माइग्रेन, थायराइड के लिए डॉक्टर को दिखाने आए थे। अब कैसा लग रहा है? घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [],
+        "diagnoses": [
+          "migraine",
+          "thyroid disorder"
+        ],
+        "procedures": [
+          "injection",
+          "wound dressing"
+        ],
+        "tests": [
+          "urine test"
+        ],
+        "symptoms": [
+          "shortness of breath",
+          "vomiting"
+        ]
+      },
+      "gold": {
+        "medicines": [],
+        "diagnoses": [
+          "migraine",
+          "thyroid disorder"
+        ],
+        "procedures": [
+          "wound dressing",
+          "injection"
+        ],
+        "tests": [
+          "urine test"
+        ],
+        "symptoms": [
+          "shortness of breath",
+          "vomiting"
+        ]
+      }
+    },
+    {
+      "i": 25,
+      "hindi": "नमस्ते, क्या मैं शर्मा जी के घर बात कर रहा हूँ? मैं क्लिनिक से फॉलो-अप के लिए कॉल कर रहा हूँ। देखिए, अभी भी थोड़ा पैर में दर्द, और बुखार है। कुछ दिन पहले आप दांत का संक्रमण के लिए डॉक्टर को दिखाने आए थे। अब कैसा लग रहा है? घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [],
+        "diagnoses": [
+          "tooth infection"
+        ],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "back pain",
+          "fever"
+        ]
+      },
+      "gold": {
+        "medicines": [],
+        "diagnoses": [
+          "tooth infection"
+        ],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "leg pain",
+          "fever"
+        ]
+      }
+    },
+    {
+      "i": 26,
+      "hindi": "नमस्ते, क्या मैं वर्मा जी के घर बात कर रहा हूँ? मैं क्लिनिक से फॉलो-अप के लिए कॉल कर रहा हूँ। डॉक्टर ने एमलोडिपिन, सेटिरिज़िन खाने के बाद लेने को कहा है। दवा जारी रखिए। कुछ दिन पहले आप माइग्रेन, दिल की बीमारी के लिए डॉक्टर को दिखाने आए थे। अब कैसा लग रहा है? जी, अभी भी थोड़ा सीने में दर्द है। घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [
+          "Amlodipine",
+          "Cetirizine"
+        ],
+        "diagnoses": [
+          "high blood pressure",
+          "migraine",
+          "heart disease"
+        ],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "chest pain"
+        ]
+      },
+      "gold": {
+        "medicines": [
+          "Amlodipine",
+          "Cetirizine"
+        ],
+        "diagnoses": [
+          "migraine",
+          "heart disease"
+        ],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "chest pain"
+        ]
+      }
+    },
+    {
+      "i": 31,
+      "hindi": "नमस्ते, क्या मैं रमेश जी के घर बात कर रहा हूँ? मैं क्लिनिक से फॉलो-अप के लिए कॉल कर रहा हूँ। हमने आपके लिए बायोप्सी की सलाह दी है। हाँ हाँ, अभी भी थोड़ा सीने में दर्द, और पेट दर्द, और दांत में दर्द है। अच्छा, कुछ दिन पहले आप गठिया, टाइफाइड के लिए डॉक्टर को दिखाने आए थे। अब कैसा लग रहा है? अच्छा, डॉक्टर ने इबुप्रोफेन, डोलो सुबह-शाम लेने को कहा है। दवा जारी रखिए। घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [
+          "Ibuprofen"
+        ],
+        "diagnoses": [
+          "arthritis",
+          "typhoid"
+        ],
+        "procedures": [
+          "biopsy"
+        ],
+        "tests": [],
+        "symptoms": [
+          "chest pain",
+          "stomach pain",
+          "toothache",
+          "joint pain"
+        ]
+      },
+      "gold": {
+        "medicines": [
+          "Ibuprofen",
+          "Paracetamol"
+        ],
+        "diagnoses": [
+          "arthritis",
+          "typhoid"
+        ],
+        "procedures": [
+          "biopsy"
+        ],
+        "tests": [],
+        "symptoms": [
+          "chest pain",
+          "stomach pain",
+          "toothache"
+        ]
+      }
+    },
+    {
+      "i": 42,
+      "hindi": "हैलो, क्या यह गुप्ता जी हैं? मैं डॉक्टर साहब के यहाँ से फॉलो-अप के लिए बात कर रहा हूँ। कुछ दिन पहले आप डॉक्टर को दिखाने आए थे। अब तबीयत कैसी है? अभी भी थोड़ा सांस लेने में तकलीफ, और कमजोरी है। डॉक्टर ने एज़िथ्रोमाइसिन, एमोक्सिसिलिन सुबह-शाम लेने को कहा है। दवा जारी रखिए। घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [
+          "Azithromycin",
+          "Amoxicillin"
+        ],
+        "diagnoses": [],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "shortness of breath",
+          "weakness",
+          "cough"
+        ]
+      },
+      "gold": {
+        "medicines": [
+          "Azithromycin",
+          "Amoxicillin"
+        ],
+        "diagnoses": [],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "shortness of breath",
+          "weakness"
+        ]
+      }
+    },
+    {
+      "i": 53,
+      "hindi": "नमस्ते, क्या मैं रमेश जी के घर बात कर रहा हूँ? मैं क्लिनिक से फॉलो-अप के लिए कॉल कर रहा हूँ। अगली बार आने से पहले सीबीसी करवा लीजिए। हम्म, कुछ दिन पहले आप एनीमिया, मधुमेह के लिए डॉक्टर को दिखाने आए थे। अब कैसा लग रहा है? अभी भी थोड़ा जोड़ों में दर्द, और दांत में दर्द है। घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [],
+        "diagnoses": [
+          "anemia",
+          "diabetes",
+          "arthritis",
+          "tooth infection"
+        ],
+        "procedures": [],
+        "tests": [
+          "complete blood count"
+        ],
+        "symptoms": [
+          "joint pain",
+          "toothache"
+        ]
+      },
+      "gold": {
+        "medicines": [],
+        "diagnoses": [
+          "anemia",
+          "diabetes"
+        ],
+        "procedures": [],
+        "tests": [
+          "complete blood count"
+        ],
+        "symptoms": [
+          "joint pain",
+          "toothache"
+        ]
+      }
+    },
+    {
+      "i": 59,
+      "hindi": "हैलो, क्या यह अहमद साहब हैं? मैं डॉक्टर साहब के यहाँ से फॉलो-अप के लिए बात कर रहा हूँ। अभी भी थोड़ा पैर में दर्द है। कुछ दिन पहले आप टाइफाइड, थायराइड के लिए डॉक्टर को दिखाने आए थे। अब कैसा लग रहा है? घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [],
+        "diagnoses": [],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "leg pain",
+          "typhoid",
+          "throat infection"
+        ]
+      },
+      "gold": {
+        "medicines": [],
+        "diagnoses": [
+          "typhoid",
+          "thyroid disorder"
+        ],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "leg pain"
+        ]
+      }
+    },
+    {
+      "i": 66,
+      "hindi": "नमस्ते, क्या मैं सुनीता जी के घर बात कर रहा हूँ? मैं क्लिनिक से फॉलो-अप के लिए कॉल कर रहा हूँ। अभी भी थोड़ा दांत में दर्द, और जोड़ों में दर्द है। हम्म, डॉक्टर ने सिप्रोफ्लोक्सासिन सुबह-शाम लेने को कहा है। दवा जारी रखिए। कुछ दिन पहले आप मधुमेह के लिए डॉक्टर को दिखाने आए थे। अब कैसा लग रहा है? घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [
+          "Ciprofloxacin"
+        ],
+        "diagnoses": [
+          "diabetes",
+          "arthritis"
+        ],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "toothache",
+          "joint pain"
+        ]
+      },
+      "gold": {
+        "medicines": [
+          "Ciprofloxacin"
+        ],
+        "diagnoses": [
+          "diabetes"
+        ],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "toothache",
+          "joint pain"
+        ]
+      }
+    },
+    {
+      "i": 70,
+      "hindi": "नमस्ते, क्या मैं सुनीता जी के घर बात कर रहा हूँ? मैं क्लिनिक से फॉलो-अप के लिए कॉल कर रहा हूँ। ठीक है, कुछ दिन पहले आप डॉक्टर को दिखाने आए थे। अब तबीयत कैसी है? अभी भी थोड़ा पैर में दर्द, और सीने में दर्द, और खांसी है। घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [],
+        "diagnoses": [],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "cough",
+          "chest pain",
+          "leg pain"
+        ]
+      },
+      "gold": {
+        "medicines": [],
+        "diagnoses": [],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "leg pain",
+          "chest pain",
+          "cough"
+        ]
+      }
+    },
+    {
+      "i": 85,
+      "hindi": "हैलो, क्या यह रमेश जी हैं? मैं डॉक्टर साहब के यहाँ से फॉलो-अप के लिए बात कर रहा हूँ। अभी भी थोड़ा सांस लेने में तकलीफ, और जोड़ों में दर्द, और कमजोरी है। डॉक्टर ने इबुप्रोफेन, इंसुलिन सुबह-शाम लेने को कहा है। दवा जारी रखिए। हमने आपके लिए दांत निकालना, बायोप्सी की सलाह दी है। ठीक है, कुछ दिन पहले आप टाइफाइड, डेंगू के लिए डॉक्टर को दिखाने आए थे। अब कैसा लग रहा है? घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [
+          "Ibuprofen",
+          "Insulin"
+        ],
+        "diagnoses": [
+          "typhoid",
+          "dengue"
+        ],
+        "procedures": [
+          "biopsy",
+          "tooth extraction"
+        ],
+        "tests": [],
+        "symptoms": [
+          "shortness of breath",
+          "joint pain",
+          "weakness"
+        ]
+      },
+      "gold": {
+        "medicines": [
+          "Ibuprofen",
+          "Insulin"
+        ],
+        "diagnoses": [
+          "typhoid",
+          "dengue"
+        ],
+        "procedures": [
+          "tooth extraction",
+          "biopsy"
+        ],
+        "tests": [],
+        "symptoms": [
+          "shortness of breath",
+          "joint pain",
+          "weakness"
+        ]
+      }
+    },
+    {
+      "i": 93,
+      "hindi": "हैलो, क्या यह वर्मा जी हैं? मैं डॉक्टर साहब के यहाँ से फॉलो-अप के लिए बात कर रहा हूँ। अभी भी थोड़ा दांत में दर्द, और पैर में दर्द है। कुछ दिन पहले आप गठिया के लिए डॉक्टर को दिखाने आए थे। अब कैसा लग रहा है? घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [],
+        "diagnoses": [
+          "arthritis"
+        ],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "toothache",
+          "joint pain",
+          "leg pain"
+        ]
+      },
+      "gold": {
+        "medicines": [],
+        "diagnoses": [
+          "arthritis"
+        ],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "toothache",
+          "leg pain"
+        ]
+      }
+    },
+    {
+      "i": 96,
+      "hindi": "हैलो, क्या यह वर्मा जी हैं? मैं डॉक्टर साहब के यहाँ से फॉलो-अप के लिए बात कर रहा हूँ। डॉक्टर ने डोलो, मेटफॉर्मिन दिन में दो बार लेने को कहा है। दवा जारी रखिए। कुछ दिन पहले आप मधुमेह के लिए डॉक्टर को दिखाने आए थे। अब कैसा लग रहा है? अच्छा, अभी भी थोड़ा खांसी है। घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [
+          "Metformin"
+        ],
+        "diagnoses": [
+          "diabetes"
+        ],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "cough"
+        ]
+      },
+      "gold": {
+        "medicines": [
+          "Paracetamol",
+          "Metformin"
+        ],
+        "diagnoses": [
+          "diabetes"
+        ],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "cough"
+        ]
+      }
+    },
+    {
+      "i": 97,
+      "hindi": "हैलो, क्या यह अहमद साहब हैं? मैं डॉक्टर साहब के यहाँ से फॉलो-अप के लिए बात कर रहा हूँ। कुछ दिन पहले आप डॉक्टर को दिखाने आए थे। अब तबीयत कैसी है? अभी भी थोड़ा पैर में दर्द, और चक्कर आना है। घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [],
+        "diagnoses": [],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "dizziness",
+          "leg pain"
+        ]
+      },
+      "gold": {
+        "medicines": [],
+        "diagnoses": [],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "leg pain",
+          "dizziness"
+        ]
+      }
+    },
+    {
+      "i": 98,
+      "hindi": "नमस्ते, क्या मैं रीना देवी के घर बात कर रहा हूँ? मैं क्लिनिक से फॉलो-अप के लिए कॉल कर रहा हूँ। ठीक है, कुछ दिन पहले आप डॉक्टर को दिखाने आए थे। अब तबीयत कैसी है? अभी भी थोड़ा पेट दर्द, और पैर में दर्द, और उल्टी है। घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [],
+        "diagnoses": [],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "stomach pain",
+          "vomiting",
+          "leg pain"
+        ]
+      },
+      "gold": {
+        "medicines": [],
+        "diagnoses": [],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "stomach pain",
+          "leg pain",
+          "vomiting"
+        ]
+      }
+    },
+    {
+      "i": 100,
+      "hindi": "हैलो, क्या यह वर्मा जी हैं? मैं डॉक्टर साहब के यहाँ से फॉलो-अप के लिए बात कर रहा हूँ। हम्म, अगली बार आने से पहले थायराइड टेस्ट करवा लीजिए। अभी भी थोड़ा दांत में दर्द है। कुछ दिन पहले आप टाइफाइड के लिए डॉक्टर को दिखाने आए थे। अब कैसा लग रहा है? देखिए, डॉक्टर ने एमोक्सिसिलिन दिन में दो बार लेने को कहा है। दवा जारी रखिए। घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [
+          "Amoxicillin"
+        ],
+        "diagnoses": [
+          "typhoid",
+          "tooth infection"
+        ],
+        "procedures": [],
+        "tests": [
+          "thyroid test"
+        ],
+        "symptoms": [
+          "toothache",
+          "weakness"
+        ]
+      },
+      "gold": {
+        "medicines": [
+          "Amoxicillin"
+        ],
+        "diagnoses": [
+          "typhoid"
+        ],
+        "procedures": [],
+        "tests": [
+          "thyroid test"
+        ],
+        "symptoms": [
+          "toothache"
+        ]
+      }
+    },
+    {
+      "i": 108,
+      "hindi": "हैलो, क्या यह शर्मा जी हैं? मैं डॉक्टर साहब के यहाँ से फॉलो-अप के लिए बात कर रहा हूँ। ठीक है, अगली बार आने से पहले सीबीसी, और एक्स-रे करवा लीजिए। हाँ हाँ, कुछ दिन पहले आप डॉक्टर को दिखाने आए थे। अब तबीयत कैसी है? डॉक्टर ने डोलो, इंसुलिन सुबह-शाम लेने को कहा है। दवा जारी रखिए। अभी भी थोड़ा बुखार, और गले में खराश, और पैर में दर्द है। घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [
+          "Amoxicillin",
+          "Insulin"
+        ],
+        "diagnoses": [],
+        "procedures": [],
+        "tests": [
+          "complete blood count",
+          "X-ray"
+        ],
+        "symptoms": [
+          "fever",
+          "sore throat",
+          "leg pain"
+        ]
+      },
+      "gold": {
+        "medicines": [
+          "Paracetamol",
+          "Insulin"
+        ],
+        "diagnoses": [],
+        "procedures": [],
+        "tests": [
+          "complete blood count",
+          "X-ray"
+        ],
+        "symptoms": [
+          "fever",
+          "sore throat",
+          "leg pain"
+        ]
+      }
+    },
+    {
+      "i": 110,
+      "hindi": "नमस्ते, क्या मैं गुप्ता जी के घर बात कर रहा हूँ? मैं क्लिनिक से फॉलो-अप के लिए कॉल कर रहा हूँ। अभी भी थोड़ा कमर दर्द, और उल्टी है। कुछ दिन पहले आप टाइफाइड, दमा के लिए डॉक्टर को दिखाने आए थे। अब कैसा लग रहा है? घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [],
+        "diagnoses": [],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "back pain",
+          "vomiting"
+        ]
+      },
+      "gold": {
+        "medicines": [],
+        "diagnoses": [
+          "typhoid",
+          "asthma"
+        ],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "back pain",
+          "vomiting"
+        ]
+      }
+    },
+    {
+      "i": 117,
+      "hindi": "हैलो, क्या यह अहमद साहब हैं? मैं डॉक्टर साहब के यहाँ से फॉलो-अप के लिए बात कर रहा हूँ। हाँ हाँ, कुछ दिन पहले आप गैस्ट्राइटिस के लिए डॉक्टर को दिखाने आए थे। अब कैसा लग रहा है? अभी भी थोड़ा सीने में दर्द, और कमर दर्द है। जी, अगली बार आने से पहले थायराइड टेस्ट, और ईसीजी करवा लीजिए। घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [],
+        "diagnoses": [
+          "gastritis",
+          "high blood pressure"
+        ],
+        "procedures": [],
+        "tests": [
+          "ECG",
+          "thyroid test"
+        ],
+        "symptoms": [
+          "chest pain",
+          "back pain"
+        ]
+      },
+      "gold": {
+        "medicines": [],
+        "diagnoses": [
+          "gastritis"
+        ],
+        "procedures": [],
+        "tests": [
+          "thyroid test",
+          "ECG"
+        ],
+        "symptoms": [
+          "chest pain",
+          "back pain"
+        ]
+      }
+    },
+    {
+      "i": 123,
+      "hindi": "हैलो, क्या यह शर्मा जी हैं? मैं डॉक्टर साहब के यहाँ से फॉलो-अप के लिए बात कर रहा हूँ। जी, अभी भी थोड़ा उल्टी, और बुखार, और भूख न लगना है। कुछ दिन पहले आप माइग्रेन, थायराइड के लिए डॉक्टर को दिखाने आए थे। अब कैसा लग रहा है? घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [],
+        "diagnoses": [],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "vomiting",
+          "fever",
+          "loss of appetite"
+        ]
+      },
+      "gold": {
+        "medicines": [],
+        "diagnoses": [
+          "migraine",
+          "thyroid disorder"
+        ],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "vomiting",
+          "fever",
+          "loss of appetite"
+        ]
+      }
+    },
+    {
+      "i": 127,
+      "hindi": "हैलो, क्या यह अहमद साहब हैं? मैं डॉक्टर साहब के यहाँ से फॉलो-अप के लिए बात कर रहा हूँ। कुछ दिन पहले आप डॉक्टर को दिखाने आए थे। अब तबीयत कैसी है? अच्छा, अभी भी थोड़ा पैर में दर्द, और दांत में दर्द है। डॉक्टर ने पैन्टोप्राज़ोल, मेटफॉर्मिन खाने के बाद लेने को कहा है। दवा जारी रखिए। घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [
+          "Metformin",
+          "Pantoprazole"
+        ],
+        "diagnoses": [],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "toothache",
+          "leg pain"
+        ]
+      },
+      "gold": {
+        "medicines": [
+          "Pantoprazole",
+          "Metformin"
+        ],
+        "diagnoses": [],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "leg pain",
+          "toothache"
+        ]
+      }
+    },
+    {
+      "i": 135,
+      "hindi": "हैलो, क्या यह रीना देवी हैं? मैं डॉक्टर साहब के यहाँ से फॉलो-अप के लिए बात कर रहा हूँ। कुछ दिन पहले आप माइग्रेन, उच्च रक्तचाप के लिए डॉक्टर को दिखाने आए थे। अब कैसा लग रहा है? डॉक्टर ने मेटफॉर्मिन खाने के बाद लेने को कहा है। दवा जारी रखिए। हम्म, अभी भी थोड़ा खांसी, और उल्टी, और चक्कर आना है। अगली बार आने से पहले ब्लड शुगर टेस्ट, और ईसीजी करवा लीजिए। घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [
+          "Metformin"
+        ],
+        "diagnoses": [
+          "high blood pressure",
+          "migraine"
+        ],
+        "procedures": [],
+        "tests": [
+          "blood sugar test",
+          "ECG"
+        ],
+        "symptoms": [
+          "cough",
+          "dizziness",
+          "vomiting"
+        ]
+      },
+      "gold": {
+        "medicines": [
+          "Metformin"
+        ],
+        "diagnoses": [
+          "migraine",
+          "high blood pressure"
+        ],
+        "procedures": [],
+        "tests": [
+          "blood sugar test",
+          "ECG"
+        ],
+        "symptoms": [
+          "cough",
+          "vomiting",
+          "dizziness"
+        ]
+      }
+    },
+    {
+      "i": 140,
+      "hindi": "हैलो, क्या यह रीना देवी हैं? मैं डॉक्टर साहब के यहाँ से फॉलो-अप के लिए बात कर रहा हूँ। अभी भी थोड़ा चक्कर आना, और सांस लेने में तकलीफ है। अगली बार आने से पहले ब्लड शुगर टेस्ट, और एक्स-रे करवा लीजिए। डॉक्टर ने इबुप्रोफेन, मेटफॉर्मिन खाने के बाद लेने को कहा है। दवा जारी रखिए। देखिए, कुछ दिन पहले आप थायराइड, माइग्रेन के लिए डॉक्टर को दिखाने आए थे। अब कैसा लग रहा है? हमने आपके लिए नेबुलाइज़ेशन की सलाह दी है। घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [
+          "Ibuprofen",
+          "Metformin"
+        ],
+        "diagnoses": [
+          "high blood pressure",
+          "migraine",
+          "thyroid disorder"
+        ],
+        "procedures": [
+          "nebulization"
+        ],
+        "tests": [
+          "blood sugar test",
+          "X-ray"
+        ],
+        "symptoms": [
+          "dizziness",
+          "shortness of breath"
+        ]
+      },
+      "gold": {
+        "medicines": [
+          "Ibuprofen",
+          "Metformin"
+        ],
+        "diagnoses": [
+          "thyroid disorder",
+          "migraine"
+        ],
+        "procedures": [
+          "nebulization"
+        ],
+        "tests": [
+          "blood sugar test",
+          "X-ray"
+        ],
+        "symptoms": [
+          "dizziness",
+          "shortness of breath"
+        ]
+      }
+    },
+    {
+      "i": 141,
+      "hindi": "हैलो, क्या यह शर्मा जी हैं? मैं डॉक्टर साहब के यहाँ से फॉलो-अप के लिए बात कर रहा हूँ। कुछ दिन पहले आप गठिया, मधुमेह के लिए डॉक्टर को दिखाने आए थे। अब कैसा लग रहा है? अभी भी थोड़ा दांत में दर्द है। डॉक्टर ने डोलो, पैरासिटामोल पाँच दिन तक लेने को कहा है। दवा जारी रखिए। घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [
+          "Paracetamol"
+        ],
+        "diagnoses": [
+          "arthritis",
+          "diabetes"
+        ],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "toothache"
+        ]
+      },
+      "gold": {
+        "medicines": [
+          "Paracetamol",
+          "Paracetamol"
+        ],
+        "diagnoses": [
+          "arthritis",
+          "diabetes"
+        ],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "toothache"
+        ]
+      }
+    },
+    {
+      "i": 147,
+      "hindi": "हैलो, क्या यह रमेश जी हैं? मैं डॉक्टर साहब के यहाँ से फॉलो-अप के लिए बात कर रहा हूँ। कुछ दिन पहले आप डेंगू के लिए डॉक्टर को दिखाने आए थे। अब कैसा लग रहा है? ठीक है, अभी भी थोड़ा बुखार है। हाँ हाँ, अगली बार आने से पहले एमआरआई, और थायराइड टेस्ट करवा लीजिए। हमने आपके लिए फिजियोथेरेपी, रूट कैनाल की सलाह दी है। घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [],
+        "diagnoses": [
+          "dengue",
+          "thyroid disorder"
+        ],
+        "procedures": [
+          "physiotherapy",
+          "root canal"
+        ],
+        "tests": [
+          "MRI",
+          "thyroid test"
+        ],
+        "symptoms": [
+          "fever"
+        ]
+      },
+      "gold": {
+        "medicines": [],
+        "diagnoses": [
+          "dengue"
+        ],
+        "procedures": [
+          "physiotherapy",
+          "root canal"
+        ],
+        "tests": [
+          "MRI",
+          "thyroid test"
+        ],
+        "symptoms": [
+          "fever"
+        ]
+      }
+    },
+    {
+      "i": 150,
+      "hindi": "हैलो, क्या यह शर्मा जी हैं? मैं डॉक्टर साहब के यहाँ से फॉलो-अप के लिए बात कर रहा हूँ। अभी भी थोड़ा कमर दर्द, और सीने में दर्द है। देखिए, डॉक्टर ने ओमेप्राज़ोल, एमलोडिपिन पाँच दिन तक लेने को कहा है। दवा जारी रखिए। कुछ दिन पहले आप डॉक्टर को दिखाने आए थे। अब तबीयत कैसी है? घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [
+          "Amlodipine",
+          "Omeprazole"
+        ],
+        "diagnoses": [],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "back pain",
+          "chest pain"
+        ]
+      },
+      "gold": {
+        "medicines": [
+          "Omeprazole",
+          "Amlodipine"
+        ],
+        "diagnoses": [],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "back pain",
+          "chest pain"
+        ]
+      }
+    },
+    {
+      "i": 154,
+      "hindi": "हैलो, क्या यह गुप्ता जी हैं? मैं डॉक्टर साहब के यहाँ से फॉलो-अप के लिए बात कर रहा हूँ। कुछ दिन पहले आप डॉक्टर को दिखाने आए थे। अब तबीयत कैसी है? अगली बार आने से पहले यूरिन टेस्ट करवा लीजिए। डॉक्टर ने एमलोडिपिन, लोसार्टन खाने के बाद लेने को कहा है। दवा जारी रखिए। अभी भी थोड़ा कमजोरी, और सिरदर्द है। घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [
+          "Amlodipine",
+          "Losartan"
+        ],
+        "diagnoses": [
+          "high blood pressure"
+        ],
+        "procedures": [],
+        "tests": [
+          "urine test"
+        ],
+        "symptoms": [
+          "weakness",
+          "headache"
+        ]
+      },
+      "gold": {
+        "medicines": [
+          "Amlodipine",
+          "Losartan"
+        ],
+        "diagnoses": [],
+        "procedures": [],
+        "tests": [
+          "urine test"
+        ],
+        "symptoms": [
+          "weakness",
+          "headache"
+        ]
+      }
+    },
+    {
+      "i": 155,
+      "hindi": "हैलो, क्या यह शर्मा जी हैं? मैं डॉक्टर साहब के यहाँ से फॉलो-अप के लिए बात कर रहा हूँ। कुछ दिन पहले आप डॉक्टर को दिखाने आए थे। अब तबीयत कैसी है? हमने आपके लिए छोटी सर्जरी, बायोप्सी की सलाह दी है। अच्छा, अभी भी थोड़ा उल्टी है। घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [],
+        "diagnoses": [],
+        "procedures": [
+          "biopsy",
+          "minor surgery"
+        ],
+        "tests": [],
+        "symptoms": [
+          "vomiting"
+        ]
+      },
+      "gold": {
+        "medicines": [],
+        "diagnoses": [],
+        "procedures": [
+          "minor surgery",
+          "biopsy"
+        ],
+        "tests": [],
+        "symptoms": [
+          "vomiting"
+        ]
+      }
+    },
+    {
+      "i": 160,
+      "hindi": "नमस्ते, क्या मैं वर्मा जी के घर बात कर रहा हूँ? मैं क्लिनिक से फॉलो-अप के लिए कॉल कर रहा हूँ। हम्म, हमने आपके लिए इंजेक्शन की सलाह दी है। डॉक्टर ने पैन्टोप्राज़ोल पाँच दिन तक लेने को कहा है। दवा जारी रखिए। अभी भी थोड़ा सांस लेने में तकलीफ है। कुछ दिन पहले आप थायराइड के लिए डॉक्टर को दिखाने आए थे। अब कैसा लग रहा है? घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [
+          "Pantoprazole"
+        ],
+        "diagnoses": [
+          "high blood pressure",
+          "thyroid disorder"
+        ],
+        "procedures": [
+          "injection"
+        ],
+        "tests": [],
+        "symptoms": [
+          "shortness of breath"
+        ]
+      },
+      "gold": {
+        "medicines": [
+          "Pantoprazole"
+        ],
+        "diagnoses": [
+          "thyroid disorder"
+        ],
+        "procedures": [
+          "injection"
+        ],
+        "tests": [],
+        "symptoms": [
+          "shortness of breath"
+        ]
+      }
+    },
+    {
+      "i": 173,
+      "hindi": "नमस्ते, क्या मैं रीना देवी के घर बात कर रहा हूँ? मैं क्लिनिक से फॉलो-अप के लिए कॉल कर रहा हूँ। अभी भी थोड़ा सांस लेने में तकलीफ, और खांसी, और उल्टी है। हाँ हाँ, कुछ दिन पहले आप डॉक्टर को दिखाने आए थे। अब तबीयत कैसी है? घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [],
+        "diagnoses": [],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "cough",
+          "shortness of breath",
+          "vomiting"
+        ]
+      },
+      "gold": {
+        "medicines": [],
+        "diagnoses": [],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "shortness of breath",
+          "cough",
+          "vomiting"
+        ]
+      }
+    },
+    {
+      "i": 190,
+      "hindi": "नमस्ते, क्या मैं रीना देवी के घर बात कर रहा हूँ? मैं क्लिनिक से फॉलो-अप के लिए कॉल कर रहा हूँ। अभी भी थोड़ा चक्कर आना, और गले में खराश, और पेट दर्द है। कुछ दिन पहले आप गैस्ट्राइटिस, दिल की बीमारी के लिए डॉक्टर को दिखाने आए थे। अब कैसा लग रहा है? घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [],
+        "diagnoses": [],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "dizziness",
+          "sore throat",
+          "stomach pain"
+        ]
+      },
+      "gold": {
+        "medicines": [],
+        "diagnoses": [
+          "gastritis",
+          "heart disease"
+        ],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "dizziness",
+          "sore throat",
+          "stomach pain"
+        ]
+      }
+    },
+    {
+      "i": 196,
+      "hindi": "नमस्ते, क्या मैं शर्मा जी के घर बात कर रहा हूँ? मैं क्लिनिक से फॉलो-अप के लिए कॉल कर रहा हूँ। अभी भी थोड़ा पैर में दर्द है। कुछ दिन पहले आप थायराइड, गठिया के लिए डॉक्टर को दिखाने आए थे। अब कैसा लग रहा है? घर में बाकी सब ठीक हैं? जी हाँ। ठीक है, स्वस्थ रहिए, ज़रूरत हो तो फिर दिखाने आइए।",
+      "pred": {
+        "medicines": [],
+        "diagnoses": [
+          "arthritis",
+          "thyroid disorder"
+        ],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "leg pain"
+        ]
+      },
+      "gold": {
+        "medicines": [],
+        "diagnoses": [
+          "thyroid disorder",
+          "arthritis"
+        ],
+        "procedures": [],
+        "tests": [],
+        "symptoms": [
+          "leg pain"
+        ]
+      }
+    }
+  ]
+}

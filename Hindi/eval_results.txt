@@ -1,0 +1,50 @@
+HINDI FINE-TUNING — EVALUATION RESULTS
+Model: Llama-3.2-1B fine-tuned (QLoRA, local 4GB GPU) on 1080 Hindi examples
+Task: read a HINDI doctor-patient conversation (TEXT) -> output medical terms as English JSON
+NOTE: this is ONLY the extraction model (Model 2). No audio / no transcription was used here.
+Score: 7 / 8 exact match on held-out (unseen) Hindi conversations.
+======================================================================================
+
+[1] HINDI: हैलो, क्या यह अहमद साहब हैं? ... इंसुलिन सुबह-शाम ... ब्लड शुगर टेस्ट ... पैर में दर्द, कमजोरी, दांत में दर्द
+    PRED: {"medicines":["Insulin"],"diagnoses":[],"procedures":[],"tests":["blood sugar test"],"symptoms":["leg pain","weakness","toothache"]}
+    GOLD: {"medicines":["Insulin"],"diagnoses":[],"procedures":[],"tests":["blood sugar test"],"symptoms":["leg pain","weakness","toothache"]}
+    -> MATCH
+
+[2] HINDI: हैलो, क्या यह रीना देवी हैं? ... Amlodipine ... निमोनिया ... पेट दर्द, उल्टी, सिरदर्द
+    PRED: {"medicines":["Amlodipine"],"diagnoses":["pneumonia"],"procedures":[],"tests":[],"symptoms":["stomach pain","vomiting","headache"]}
+    GOLD: {"medicines":["Amlodipine"],"diagnoses":["pneumonia"],"procedures":[],"tests":[],"symptoms":["stomach pain","vomiting","headache"]}
+    -> MATCH
+
+[3] HINDI: हैलो, क्या यह अहमद साहब हैं? ... Metformin ... कमजोरी, पैर में दर्द, दांत में दर्द
+    PRED: {"medicines":["Metformin"],"diagnoses":[],"procedures":[],"tests":[],"symptoms":["weakness","leg pain","toothache"]}
+    GOLD: {"medicines":["Metformin"],"diagnoses":[],"procedures":[],"tests":[],"symptoms":["weakness","leg pain","toothache"]}
+    -> MATCH
+
+[4] HINDI: नमस्ते, ... निमोनिया ... थायराइड टेस्ट, सीटी स्कैन ... गले में खराश
+    PRED: {"medicines":[],"diagnoses":["pneumonia"],"procedures":[],"tests":["thyroid test","CT scan"],"symptoms":["sore throat"]}
+    GOLD: {"medicines":[],"diagnoses":["pneumonia"],"procedures":[],"tests":["thyroid test","CT scan"],"symptoms":["sore throat"]}
+    -> MATCH
+
+[5] HINDI: हैलो, क्या यह गुप्ता जी हैं? ... दमा ... पेट दर्द, सांस लेने में तकलीफ
+    PRED: {"medicines":[],"diagnoses":["asthma"],"procedures":[],"tests":[],"symptoms":["stomach pain","shortness of breath"]}
+    GOLD: {"medicines":[],"diagnoses":["asthma"],"procedures":[],"tests":[],"symptoms":["stomach pain","shortness of breath"]}
+    -> MATCH
+
+[6] HINDI: नमस्ते, ... दिल की बीमारी, किडनी स्टोन ... एमआरआई, थायराइड टेस्ट ... पेट दर्द, पैर में दर्द
+    PRED: {"medicines":[],"diagnoses":["heart disease","kidney stone"],"procedures":[],"tests":["MRI","thyroid test"],"symptoms":["stomach pain","leg pain"]}
+    GOLD: {"medicines":[],"diagnoses":["heart disease","kidney stone"],"procedures":[],"tests":["MRI","thyroid test"],"symptoms":["stomach pain","leg pain"]}
+    -> MATCH
+
+[7] HINDI: नमस्ते, ... (empty follow-up call, no medical content)
+    PRED: {"medicines":[],"diagnoses":[],"procedures":[],"tests":[],"symptoms":[]}
+    GOLD: {"medicines":[],"diagnoses":[],"procedures":[],"tests":[],"symptoms":[]}
+    -> MATCH  (correctly returns empty — did NOT invent terms)
+
+[8] HINDI: नमस्ते, ... Atorvastatin, Paracetamol ... टांके, छोटी सर्जरी ... सांस लेने में तकलीफ, गले में खराश, पैर में दर्द
+    PRED: {"medicines":["Atorvastate","Paracetamol"],"diagnoses":[],"procedures":["stitches","minor surgery"],"tests":[],"symptoms":["shortness of breath","sore throat","leg pain"]}
+    GOLD: {"medicines":["Atorvastatin","Paracetamol"],"diagnoses":[],"procedures":["stitches","minor surgery"],"tests":[],"symptoms":["shortness of breath","sore throat","leg pain"]}
+    -> NEAR MISS  (only "Atorvastate" vs "Atorvastatin" — 1-letter typo; everything else correct)
+
+======================================================================================
+SUMMARY: 7/8 exact match. The 1 miss was a single-character spelling slip on a drug name.
+Training: loss 1.38 -> 0.078, token accuracy 97%, 2 epochs, local RTX 3050 (4GB), QLoRA 4-bit.
