@@ -1,0 +1,17 @@
+{
+  "engine": "local/llama-3.2-3b-instruct-q4_k_m (llama.cpp server, CPU)",
+  "processing_sec": 20.9,
+  "llm_process_rss_gb": 4.01,
+  "terms": {
+    "medicines": [],
+    "diagnoses": [
+      "breast cancer"
+    ],
+    "procedures": [],
+    "tests": [],
+    "symptoms": [
+      "pain in the hands",
+      "pain in the legs"
+    ]
+  }
+}

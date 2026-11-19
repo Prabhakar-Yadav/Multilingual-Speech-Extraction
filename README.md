@@ -65,11 +65,12 @@ You can also run individual steps:
 
 Use `src/analyze_audio.py` to inspect recording quality before interpreting a transcript. Poor source audio cannot be repaired reliably by a larger model.
 
-## Data, privacy, and generated files
+## Data, privacy, and models
 
-Do not commit real patient recordings, transcripts, identifiers, credentials, or other confidential material. Keep private inputs in a local directory such as `data/private/`; it is ignored by Git. Model weights, local environment files, logs, training checkpoints, and generated outputs are also ignored.
-
-Some example and experiment data files are already tracked in this repository. Review their contents and confirm you have permission to publish them before redistributing this project. The ignore rules do not remove files that Git already tracks.
+- **Datasets and audio**: Private patient recordings, call transcripts, audio files (`.mp3`, `.mpeg`, `.wav`), and training/validation datasets (`data/`, `Bengali/data/`, `Hindi/data/`, `Bengali/ASR/data/`) are excluded from Git to maintain privacy and data security.
+- **Trained model weights**: Fine-tuned LoRA adapters and domain-specific models (`Bengali/models/`, `Hindi/models/`, `Bengali/ASR/models/`, and `models/medibeng/`) are tracked via Git LFS.
+- **Pretrained base models**: Heavy third-party base models (Whisper Medium, NLLB-200, Llama 3.2 GGUF, BanglaASR) are excluded from the repository. They can be downloaded directly from their respective Hugging Face repositories using `src/download_model.py`.
+- **Environments**: Local virtual environments (`.venv/`, `env/`) and environment configurations (`.env`) are strictly gitignored.
 
 ## Project notes
 

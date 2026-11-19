@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<title>Medical Call Analysis — Plain-English Summary</title><style>
+*{box-sizing:border-box;}
+body{font-family:'Segoe UI',Calibri,Arial,sans-serif;color:#26323c;max-width:860px;margin:0 auto;padding:34px 40px;font-size:14px;line-height:1.55;background:#fff;}
+h1{font-size:25px;color:#1f2d3a;margin:0 0 2px;}
+.sub{color:#6a7a86;font-size:13px;margin-bottom:18px;}
+h2{font-size:16px;color:#1f6f54;margin:24px 0 8px;border-bottom:2px solid #e3ece8;padding-bottom:4px;}
+.goal{background:#f0f6f4;border-left:4px solid #1f6f54;padding:12px 16px;border-radius:5px;margin:14px 0;}
+.challenge{background:#fbf3ef;border-left:4px solid #b5532f;padding:12px 16px;border-radius:5px;margin:14px 0;}
+table{width:100%;border-collapse:collapse;margin:10px 0;}
+th{background:#eef3f6;text-align:left;padding:8px 11px;font-size:12.5px;border-bottom:2px solid #cdd8df;}
+td{padding:8px 11px;border-bottom:1px solid #eaeff2;vertical-align:top;font-size:13px;}
+tr:nth-child(even){background:#f8fbfc;}
+.step td:first-child{font-weight:700;color:#34546b;white-space:nowrap;}
+.bad{color:#b5532f;font-weight:600;} .good{color:#1f6f54;font-weight:600;}
+.result-card{border:1px solid #e0e8ed;border-radius:8px;padding:12px 16px;margin:8px 0;background:#fafcfd;}
+.result-card b{color:#34546b;}
+.tag{display:inline-block;background:#e8f1ee;color:#1f6f54;border-radius:20px;padding:1px 9px;font-size:12px;margin:2px;}
+.foot{margin-top:26px;padding-top:12px;border-top:1px solid #e3ece8;color:#7a8a96;font-size:12px;font-style:italic;}
+@media print{body{padding:14px;}}
+</style></head><body>
+
+<h1>Turning Bengali Doctor Calls into Medical Information</h1>
+<div class="sub">A plain-English summary of what was built, how, and what it produces · VaultStack</div>
+
+<div class="goal"><b>The goal:</b> Take a recorded phone call between a doctor and patient (spoken in Bengali) and automatically pull out the useful <b>medical information</b> — what's wrong with the patient, what tests or procedures are involved, and which medicines are mentioned — so a hospital can act on it without listening to every call.</div>
+
+<div class="challenge"><b>The challenge we hit:</b> The recordings are very low quality — like a muffled, far-away phone line. The crisp sounds that let you tell one word from another are simply missing from the audio. A person could tell "someone is speaking Bengali," but not make out the exact words. This made the job genuinely hard.</div>
+
+<h2>What we did — step by step</h2>
+<p>We didn't get it on the first try. We improved the approach in stages, testing a better tool each time:</p>
+<table>
+<tr><th>Attempt</th><th>What we tried</th><th>Result</th></tr>
+<tr class="step"><td>1</td><td>Standard speech-to-text software</td><td class="bad">Gibberish — invented random words</td></tr>
+<tr class="step"><td>2</td><td>Cleaned the audio (removed background hum, boosted the voice)</td><td class="bad">Slightly clearer, still unusable</td></tr>
+<tr class="step"><td>3</td><td>Switched to AI trained specifically on the Bengali language</td><td>Recovered real sentences, but messy</td></tr>
+<tr class="step"><td>4</td><td>Tried AI trained on Bengali <i>medical</i> conversations</td><td>Caught medical phrasing, still unreliable</td></tr>
+<tr class="step"><td>5</td><td>Used a powerful cloud AI (OpenAI Whisper "Large", via Groq)</td><td class="good">Finally clear, readable English</td></tr>
+<tr class="step"><td>6</td><td>Fed that to a smart language model to read it and list the medical terms</td><td class="good">Real diagnoses, procedures &amp; symptoms</td></tr>
+<tr class="step"><td>7</td><td>Added a "confidence check" so the AI can't make up medicine names</td><td class="good">Honest results — no invented data</td></tr>
+</table>
+
+<h2>The final system (simple version)</h2>
+<p><b>Step 1 — Listen:</b> a powerful speech AI converts the Bengali audio into text and English.<br>
+<b>Step 2 — Understand:</b> a language AI reads the English and picks out the medical terms.<br>
+<b>Step 3 — Verify:</b> each term comes with a confidence level, so unreliable guesses are flagged, never trusted blindly.</p>
+
+<h2>What you get — for every call</h2>
+<p>One clean file (<b>RESULT.json</b>) per call, containing:</p>
+<table>
+<tr><th>Field</th><th>What it is</th></tr>
+<tr><td><b>transcript_bengali</b></td><td>The call written out in Bengali</td></tr>
+<tr><td><b>translation_english</b></td><td>The English translation</td></tr>
+<tr><td><b>medical_terms</b></td><td>Diagnoses, procedures, tests, symptoms, medicines — extracted automatically</td></tr>
+</table>
+
+<h2>Example results (from the 4 test calls)</h2>
+<div class="result-card"><b>Call 2:</b> Diagnoses: <span class="tag">joint problem</span><span class="tag">breast cancer</span> · Procedure: <span class="tag">physiotherapy</span> · Symptoms: <span class="tag">pain in hands &amp; legs</span><span class="tag">difficulty walking</span></div>
+<div class="result-card"><b>Call 3:</b> Diagnoses: <span class="tag">tooth problem</span><span class="tag">infection</span><span class="tag">fever</span> · Procedures: <span class="tag">root canal</span><span class="tag">surgery</span></div>
+<div class="result-card"><b>Call 4:</b> Procedures: <span class="tag">tooth removal</span><span class="tag">blood test</span> · Symptoms: <span class="tag">toothache</span><span class="tag">leg ache</span><span class="tag">tiredness</span></div>
+<div class="result-card"><b>Call 1:</b> Symptoms: <span class="tag">discomfort</span><span class="tag">sleep problem</span></div>
+
+<h2>The honest bottom line</h2>
+<p><b class="good">It works.</b> From audio that earlier produced only gibberish, we now reliably get the patient's conditions, procedures and symptoms in plain English.</p>
+<p><b class="bad">One limitation:</b> exact <b>medicine names</b> could not be recovered from these particular recordings — they're either spoken only as "medicine" or lost to the poor audio quality. This is a <b>recording-quality</b> issue, not a system flaw. With clearer recordings (better microphone / phone line), the same system will also capture medicine names.</p>
+
+<div class="foot">Method: Groq Whisper Large V3 (speech) + Llama 3.3 70B (extraction), with confidence-checking. Full per-call results are in the numbered folders (1–4) as RESULT.json. · VaultStack · 2026</div>
+</body></html>

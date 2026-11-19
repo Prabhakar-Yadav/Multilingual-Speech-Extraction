@@ -1,0 +1,16 @@
+{
+  "engine": "local/llama-3.2-3b-instruct-q4_k_m (llama.cpp server, CPU)",
+  "processing_sec": 74.2,
+  "llm_process_rss_gb": 4.0,
+  "terms": {
+    "medicines": [],
+    "diagnoses": [],
+    "procedures": [],
+    "tests": [],
+    "symptoms": [
+      "leg ache",
+      "pain",
+      "tiredness"
+    ]
+  }
+}

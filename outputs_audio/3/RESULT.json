@@ -1,0 +1,30 @@
+{
+  "file": "3.mp3.mpeg",
+  "type": "Bengali doctor-patient phone call",
+  "method": "Groq Whisper Large V3 (transcribe + translate) -> Llama 3.3 70B (medical extraction)",
+  "audio_duration_sec": 246.7,
+  "processing_time_sec": 18.6,
+  "processing_note": "processing_time measured on Groq CLOUD API (cloud+network), NOT local hardware. For on-prem 8GB sizing, benchmark local models.",
+  "real_time_factor": 0.08,
+  "transcript_bengali": " আলো হাকি মা বেবে বালতে কথা বলছেন হাকি বলছেন নামসকার আমি উস্থি থানার পার্ষে যে দাক্তার খনাটা আছে সেখান তেকে কথা বলছি এখন কেমন আপছি? এখন কেমন আপছি? বিশ্কিসুদিন আগে নি আমাদের এখন তেকি দাতে সমুষা জন্য দাক্তা দেখিয়েছিলেন এখন কেমন আছি? কেমন আছি, আমি ভুন মার বোলিছে, আতে ওর কাছে ফন তাদি আছা আস্যা কাজিনেস দিয়ে ছিড়া ছিয়ে ছিডাম ইক্ছু রিয়ের কারণেয় তেত পারেনির দাক্ষের খবেয় এখন উস্যুতে কারে নে তো দাতে সমুষট এখন সম্পুনে ঠিক हয় নি না না আপনাদের বাডিতে বাকি সাবাই যামন আছেন? ভারা আছে কিন্তো জামাতের জে এক লিএ সমস্থাদ জন্য এক লিএ করানের জন্য বলে ছিলো এখে একটা উন্না কানো করো পরেছিল বলো এখন কিছু এখন ভাবির নিমি কি করনা জন্য? কনেক কানো করো পরেছিল হায়? কি করনা জন্য? আপনারি সুবিদা হাবে সুত্যাসেন শুক্রবাকটা বাদ দিয়ে আসেবেন শুক্রবাকটা কিন্তো আমাদের এখানে বন্ভ থাকে ছিকাছে হোয়া সুত্যাসেন দেখেছে না না তিকাছে জাদি মনে করিন কনো রকম কনো সমস্যা কিছো হচ্ছে তালে কিন তবুশ্য় আমাদের কে জানাবেন তিকাছে আপনার মলোবন সমাইটা আমাদেরকে দেবার জুন্নো ভালো থাকের সুষ্ত থাকের",
+  "translation_english": " Hello! How are you? How are you? How are you? Hello, I am at the hospital next to the hospital. I am talking to you from there. A few days ago, I was here and I saw a doctor for a tooth problem. How are you now? Oh, I don't know. I called my mother and she didn't answer. Oh. I mean, I called the doctor I know. Hello! Hello! Yes, tell me. I am talking to the doctor next to the hospital. Where? The doctor next to the hospital? The doctor? The doctor is near the hospital. Yes yes yes tell me A few days ago you were seeing a doctor for dental problems How feeling better now I had a fever and I couldn sleep because of the fever I don't have a husband. Okay. So, is your family still in good health? No, no. And how are the others in your family? They are fine. But, the husband of my daughter, he told me to get married. He told me to do so many things, but I don't have any idea what to do. What to do? He told me to do so many things. What for? I was going to do a surgery for the infection. RCT? Yes, RCT. It will be better if you don do RCT If you don have a dentist you will have to your life You will have to eat a lot If you don do it and put the cap on the tooth will be permanently healed There will be no more problem. But to do this, you will have to spend around 6500-7000 rupees. That is happening here between 3 and 3.5. You do the RCT and put the cap on it. Okay? If you spend more, you will be better. Yes. Ok? Yes. How are you doing at home? I am fine. Did you hear any problems at home? No, I didn't hear any problems. If you have any problems or any problems, then you can come here and see. We have come here from Kolkata a small department of doctors Here a minimum fee is between 100 to 200 rupees and the medicine that you need everything is completely free of charge from us here. So, if you come, you will come with the credit card. The credit card is closed here. Is that okay? Yes, it is okay. Okay. And you have come here and seen how the doctor's advice has been taken here. Yes, it is okay. Thank you very much. Thank you very much. Thank you very much. Thank you very much. Thank you very much. It was good. How was the staff's behavior here? Huh? How was the staff's behavior here? The behavior was very good. Did you face any problems here? No, no. Okay. If you think there is any problem, then you will definitely let us know. Okay? Okay. Thank you very much for your time. Stay healthy and happy.",
+  "medical_terms": {
+    "medicines": [],
+    "diagnoses": [
+      "tooth problem",
+      "infection",
+      "fever"
+    ],
+    "procedures": [
+      "surgery",
+      "RCT"
+    ],
+    "tests": [],
+    "symptoms": [
+      "tooth problem",
+      "fever",
+      "sleeplessness"
+    ]
+  },
+  "note": "Medicines empty: specific drug names were not clearly spoken or not recoverable from this low-quality (8kHz) recording. Other terms are extracted from the conversation content."
+}

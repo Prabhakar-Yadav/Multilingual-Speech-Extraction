@@ -1,4 +1,4 @@
-# Secrets and local configuration
+# Secrets and environment configurations
 .env
 .env.*
 !.env.example
@@ -6,7 +6,7 @@
 secrets/
 .secrets/
 
-# Python environments, caches, and build artifacts
+# Python virtual environments, caches, and build artifacts
 .venv/
 .venv*/
 venv/
@@ -27,10 +27,8 @@ dist/
 coverage.xml
 htmlcov/
 
-# Notebooks and editor/OS files
+# Notebooks and OS files
 .ipynb_checkpoints/
-.vscode/
-.idea/
 .DS_Store
 Thumbs.db
 desktop.ini
@@ -38,45 +36,39 @@ desktop.ini
 *.swo
 *~
 
-# Downloaded model weights and executable runtimes
-models/
-**/models/
-*.safetensors
-*.gguf
-*.onnx
+# Datasets, audio media, and client transcripts
+data/
+**/data/
+Bengali/data/
+Hindi/data/
+Bengali/ASR/data/
+call transcription.docx
+client_transcripts.txt
 *.pkl
+*.wav
+*.mp3
+*.mpeg
+*.mp4
+*.m4a
+*.flac
+
+# Pretrained third-party base models (re-download via src/download_model.py)
+models/banglaasr/
+models/biomedical-ner-all/
+models/faster-whisper-medium/
+models/llama-3.2-3b-gguf/
+models/llamacpp/
+models/nllb-200-distilled-600M/
+models/vaani-medium/
+Hindi/models/base-1b-4bit/
+Hindi/models/base-3b-4bit/
+Bengali/ASR/models/whisper-medium/
+
+# Training checkpoints, optimizer states, and runs
+**/checkpoint-*/
+**/runs/
 *.pt
 *.pth
 *.bin
 *.dll
 *.exe
-
-# Training checkpoints and generated run artifacts
-**/checkpoint-*/
-**/runs/
-outputs/
-outputs_*/
-outputs_audio/
-**/outputs/
-**/outputs_*/
-**/outputs_audio/
-*.log
-train_log.txt
-train_max_log.txt
-
-# Local input media and generated archives
-*.wav
-*.mp3
-*.mpeg
-*.mp4
-*.zip
-*.7z
-*.rar
-*.tar.gz
-
-# Local or potentially identifying call materials
-call transcription.docx
-client_transcripts.txt
-data/private/
-data/local/
-Bengali/ASR/data/
